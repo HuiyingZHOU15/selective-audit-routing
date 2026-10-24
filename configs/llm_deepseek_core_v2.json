@@ -1,0 +1,32 @@
+{
+  "version": "core-v2-1",
+  "provider": "deepseek",
+  "base_url": "https://api.deepseek.com",
+  "model": "deepseek-flash",
+  "api_key_env": "DEEPSEEK_API_KEY",
+  "dataset": "data/processed/model_dataset_v2.csv",
+  "routing_table": "results/tables/core_v2_test_predictions.csv",
+  "label_definitions": "configs/llm_label_definitions_v2.json",
+  "system_prompt": "prompts/deepseek_system_core_v2.txt",
+  "candidate_table": "data/interim/deepseek_core_v2_candidates.csv",
+  "response_log": "artifacts/llm_responses/deepseek_flash_core_v2.jsonl",
+  "audit_table": "results/tables/core_v2_llm_audit.csv",
+  "metrics": "results/metrics/core_experiment_v2.json",
+  "report": "results/reports/core_experiment_v2_zh.md",
+  "text_column": "text_context_v2",
+  "target_column": "target_level1",
+  "prompt_seed": 20260927,
+  "temperature": 0.0,
+  "reasoning_effort": "none",
+  "max_output_tokens": 700,
+  "max_attempts": 3,
+  "request_timeout_seconds": 90,
+  "random_iterations": 2000,
+  "bootstrap_iterations": 500,
+  "pricing_usd_per_million_tokens": {
+    "off_peak_input_cache_miss": 0.15,
+    "off_peak_output": 0.60,
+    "peak_input_cache_miss": 0.30,
+    "peak_output": 1.20
+  }
+}

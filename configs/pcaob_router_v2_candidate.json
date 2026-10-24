@@ -1,0 +1,25 @@
+{
+  "version": "pcaob-router-v2-candidate",
+  "status": "exploratory_not_frozen",
+  "seed": 20261002,
+  "audit_table": "../rag_pilot_runtime/pcaob_rag_pilot_v1_audit.csv",
+  "development_oof": "data/processed/pcaob_development_oof_v1.csv",
+  "conditions": {
+    "backend": "report_rag"
+  },
+  "folds": 5,
+  "route_budgets": [0.1, 0.2, 0.3, 0.5],
+  "human_review_grid_step": 0.01,
+  "target_system_accuracy": 0.95,
+  "prevalence_scenarios": {
+    "pilot_unweighted": null,
+    "development_oof": "derive_from_development_oof",
+    "retrospective_test": 0.0876
+  },
+  "notes": [
+    "The pilot deliberately contains 60 small-model errors and 60 small-model-correct cases.",
+    "Prevalence-standardized results are sensitivity analyses, not population estimates, because within-stratum sampling was label-balanced and risk-enriched.",
+    "Only features available before the report-RAG LLM call are permitted.",
+    "Router v1 remains frozen and is not modified by this candidate experiment."
+  ]
+}

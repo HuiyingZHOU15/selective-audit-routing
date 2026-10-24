@@ -1,0 +1,112 @@
+{
+  "version": "sec-bert-frozen-retrospective-test-v1-20261013",
+  "status": "retrospective_already_inspected_no_test_tuning",
+  "samples": 890,
+  "reports": 95,
+  "freeze_file": "configs\\sec_bert_operating_points_v1.freeze.json",
+  "temperature": 1.1989779352903378,
+  "probability_metrics": {
+    "raw": {
+      "temperature": 1.0,
+      "accuracy": 0.9337078651685393,
+      "macro_f1": 0.902444338062541,
+      "balanced_accuracy": 0.9001143350990709,
+      "nll": 0.2881985410007152,
+      "multiclass_brier": 0.11139707694420085,
+      "ece_10_bins": 0.04014214712178443
+    },
+    "temperature_scaled": {
+      "temperature": 1.1989779352903378,
+      "accuracy": 0.9337078651685393,
+      "macro_f1": 0.902444338062541,
+      "balanced_accuracy": 0.9001143350990709,
+      "nll": 0.27360679416608663,
+      "multiclass_brier": 0.10696006331446006,
+      "ece_10_bins": 0.021751174639802265
+    }
+  },
+  "operating_points": [
+    {
+      "samples": 890,
+      "referred": 38,
+      "referral_rate": 0.04269662921348315,
+      "coverage": 0.9573033707865168,
+      "selective_accuracy": 0.9530516431924883,
+      "selective_risk": 0.046948356807511735,
+      "sample_level_binomial_risk_upper_95": 0.06067857854520224,
+      "accepted_macro_f1": 0.9225268745846903,
+      "errors_remaining": 40,
+      "errors_captured": 19,
+      "error_capture_rate": 0.3220338983050847,
+      "referral_precision": 0.5,
+      "oracle_assisted_accuracy_upper_bound": 0.9550561797752809,
+      "operating_point": "primary_5pct",
+      "threshold": 0.5691283109492091
+    },
+    {
+      "samples": 890,
+      "referred": 76,
+      "referral_rate": 0.0853932584269663,
+      "coverage": 0.9146067415730337,
+      "selective_accuracy": 0.9766584766584767,
+      "selective_risk": 0.02334152334152334,
+      "sample_level_binomial_risk_upper_95": 0.03406254403048137,
+      "accepted_macro_f1": 0.9531936880240953,
+      "errors_remaining": 19,
+      "errors_captured": 40,
+      "error_capture_rate": 0.6779661016949152,
+      "referral_precision": 0.5263157894736842,
+      "oracle_assisted_accuracy_upper_bound": 0.9786516853932584,
+      "operating_point": "safety_10pct",
+      "threshold": 0.8602307794324395
+    }
+  ],
+  "report_cluster_bootstrap_95": {
+    "primary_5pct": {
+      "coverage": [
+        0.9409441549680736,
+        0.9573098753142686,
+        0.9702457956015524
+      ],
+      "selective_accuracy": [
+        0.9362496597978227,
+        0.9531911514093497,
+        0.9702624775799357
+      ],
+      "error_capture_rate": [
+        0.19101123595505617,
+        0.3225806451612903,
+        0.48148148148148145
+      ],
+      "referral_precision": [
+        0.3125,
+        0.5,
+        0.6875
+      ]
+    },
+    "safety_10pct": {
+      "coverage": [
+        0.8939144100290866,
+        0.9148936170212766,
+        0.9337024895160753
+      ],
+      "selective_accuracy": [
+        0.9622109250398724,
+        0.9773031758382299,
+        0.987469129026947
+      ],
+      "error_capture_rate": [
+        0.5283018867924528,
+        0.6829268292682927,
+        0.8085106382978723
+      ],
+      "referral_precision": [
+        0.39743150684931505,
+        0.5283018867924528,
+        0.6511627906976745
+      ]
+    }
+  },
+  "protocol_guardrail": "Temperature, score, and thresholds were frozen before this file was read. No retrospective test label changed any decision rule.",
+  "claim_guardrail": "This test has been inspected in prior experiments and remains retrospective. Confirmatory claims require a new temporal holdout."
+}

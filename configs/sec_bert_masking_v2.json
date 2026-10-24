@@ -1,0 +1,26 @@
+{
+  "version": "sec-bert-masking-v2-20261019",
+  "dataset": "data/processed/model_dataset_v2.csv",
+  "model_name": "nlpaueb/sec-bert-base",
+  "target": "target_level1",
+  "original_text_column": "text_context_v2",
+  "masked_text_column": "text_context_masked_v2",
+  "seed": 20261002,
+  "max_length": 256,
+  "epochs": 3,
+  "learning_rate": 0.00002,
+  "batch_size": 4,
+  "gradient_accumulation": 4,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.1,
+  "gradient_clip_norm": 1.0,
+  "bootstrap_replicates": 2000,
+  "expected_clean_split_sizes": {
+    "train": 3982,
+    "validation": 927,
+    "calibration": 608,
+    "test": 890
+  },
+  "selection": "Each model uses validation macro-F1 for epoch selection. Calibration and test labels never select weights or hyperparameters.",
+  "checkpoint_root": "artifacts/models/sec_bert_masking_v2"
+}

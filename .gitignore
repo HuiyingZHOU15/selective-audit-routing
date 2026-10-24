@@ -1,0 +1,45 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python and test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.mplconfig/
+.tmp_pip/
+
+# Local runtimes and caches
+pilot_runtime/
+artifacts/hf_cache/
+artifacts/llm_responses/
+**/cache/
+**/.cache/
+
+# Model weights and large checkpoint archives
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.zip
+*.tar
+*.tar.gz
+
+# Source and derived text are released separately after redistribution review
+data/raw/
+data/interim/
+data/processed/
+data/releases/
+
+# Local build output
+manuscript/*.aux
+manuscript/*.log
+manuscript/*.out
+manuscript/*.xdv
+manuscript/*.synctex.gz

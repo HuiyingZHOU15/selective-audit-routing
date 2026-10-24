@@ -1,0 +1,116 @@
+{
+  "version": "v2",
+  "policy": "hierarchical taxonomy retaining normalized official fine labels; semantic coarse labels are assigned from label names only",
+  "design_constraints": [
+    "No mapping rule is derived from test predictions or DeepSeek outputs.",
+    "The v1 sample population and report-level split assignments are preserved for comparability.",
+    "Fine labels remain traceable to the official audit-area strings.",
+    "Context may be reconstructed only from the same report, issuer reference, and official audit area."
+  ],
+  "explicit_aliases": {
+    "Business Combination": "Business Combinations",
+    "Accounts Receivables": "Accounts Receivable",
+    "Related Party Transaction": "Related Party Transactions",
+    "Related Party transactions": "Related Party Transactions",
+    "Significant Account": "Significant Accounts",
+    "A Significant Account": "Significant Accounts",
+    "Significant Transaction": "Significant Transactions",
+    "Certain Transaction": "Certain Transactions",
+    "Intangible Asset": "Intangible Assets",
+    "Long-Lived Asset": "Long-Lived Assets",
+    "Long-lived Assets": "Long-Lived Assets",
+    "Long-Lived": "Long-Lived Assets",
+    "Certain Asset": "Certain Assets",
+    "Significant Asset": "Significant Assets",
+    "Significant Estimate": "Significant Estimates",
+    "A Significant Estimate": "Significant Estimates",
+    "Equity-Related Transaction": "Equity and Equity-Related Transactions",
+    "Equity & Equity-Related Transactions": "Equity and Equity-Related Transactions",
+    "Equity and Equity Related Transactions": "Equity and Equity-Related Transactions",
+    "Equity and equity-related transactions": "Equity and Equity-Related Transactions",
+    "Stock Compensation.": "Stock-Based Compensation",
+    "Stock Compensation": "Stock-Based Compensation",
+    "Share-Based Compensation": "Stock-Based Compensation",
+    "Payroll Expense": "Payroll Expenses",
+    "Research and development Expenses": "Research and Development Expenses",
+    "Accrued Expense": "Accrued Expenses",
+    "Expense": "Expenses",
+    "Cash Flows": "Statement of Cash Flows",
+    "ITGCs": "Information Technology General Controls",
+    "Information Technology General Controls (ITGCs)": "Information Technology General Controls",
+    "Evaluation of Control Deficiencies": "Evaluating Control Deficiencies",
+    "Financial Statement Presentation": "Financial Statement Presentation and Disclosures",
+    "Significant Disclosure": "Significant Accounts and Disclosures",
+    "Significant accounts and disclosures": "Significant Accounts and Disclosures",
+    "Plant, Property, and Equipment": "Property, Plant, and Equipment",
+    "PP&E": "Property, Plant, and Equipment"
+  },
+  "level1_rules": [
+    {
+      "label": "Credit, Loans, Deposits and Insurance",
+      "pattern": "insurance|reinsurance|premium|medical claims|unpaid.*claims|incurred but not reported|loss reserves|self-insurance"
+    },
+    {
+      "label": "Expenses, Compensation and Benefits",
+      "pattern": "pension|post-retirement|stock-based compensation|share-based payment|payroll|participant|employer contributions|benefits paid"
+    },
+    {
+      "label": "Income Taxes",
+      "pattern": "income tax|deferred tax"
+    },
+    {
+      "label": "Revenue and Receivables",
+      "pattern": "revenue|receivable|deferred revenue|contract liabilit|unbilled|fee and commission income|servicing fee income|sales discount|allowance for doubtful|other income|dividend income|contribution"
+    },
+    {
+      "label": "Credit, Loans, Deposits and Insurance",
+      "pattern": "loan|credit loss|deposit"
+    },
+    {
+      "label": "Inventory and Cost of Sales",
+      "pattern": "inventory|work in progress|cost of sales"
+    },
+    {
+      "label": "Business Combinations and Consolidation",
+      "pattern": "business combination|acquisition|variable interest|divestiture|discontinued operations"
+    },
+    {
+      "label": "Long-Lived and Intangible Assets",
+      "pattern": "goodwill|intangible|long-lived|property, plant|plant, property|pp&e|oil and gas|mineral reserve|rental propert|real estate|capitalized software|internally developed software|asset retirement|reclamation|exploration and evaluation|mortgage servicing|assets held for sale|non-current asset|prepayment|lease|depreciation|amortization"
+    },
+    {
+      "label": "Investments and Financial Instruments",
+      "pattern": "investment|securit|derivative|financial instrument|foreign currency|partnership interest|digital asset"
+    },
+    {
+      "label": "Debt, Equity and Liabilities",
+      "pattern": "debt|equity|warrant|liabilit|payable|accrual|preferred|common stock|common share|convertible|contingent consideration|litigation|claims|contingenc"
+    },
+    {
+      "label": "Cash and Other Assets",
+      "pattern": "cash"
+    },
+    {
+      "label": "Expenses, Compensation and Benefits",
+      "pattern": "expense|commission payable"
+    },
+    {
+      "label": "Related Parties and Significant Transactions",
+      "pattern": "related part|significant transaction|certain transaction"
+    },
+    {
+      "label": "Reporting, Controls, Estimates and Audit Procedures",
+      "pattern": "estimate|fair value|valuation"
+    },
+    {
+      "label": "Reporting, Controls, Estimates and Audit Procedures",
+      "pattern": "journal|audit|control|financial reporting|misstatement|going concern|fraud|illegal act|planning|materiality|presentation|disclosure|segment|significant account|balance sheet|income statement|subsequent event|comparability|earnings per share|change management"
+    },
+    {
+      "label": "Cash and Other Assets",
+      "pattern": ".*"
+    }
+  ],
+  "context_reference_pattern": "\\b(these|those|such|aforementioned|above-mentioned)\\s+(assets?|accounts?|transactions?|controls?|data|assumptions?|liabilities|procedures?)\\b|\\bthis control\\b|\\bthe procedures discussed above\\b|\\bas discussed above\\b",
+  "shared_preamble_marker": "The following deficiencies were identified:"
+}

@@ -1,0 +1,14 @@
+{
+  "Revenue and Receivables": "Revenue recognition, sales, deferred or contract revenue, receivables, collectibility, or related balances and controls.",
+  "Long-Lived and Intangible Assets": "Goodwill, intangible or long-lived assets, property and equipment, leases, impairment, depreciation, amortization, software, real estate, or asset-retirement obligations.",
+  "Inventory and Cost of Sales": "Inventory existence or valuation, costing, reserves, work in progress, and cost of sales.",
+  "Business Combinations and Consolidation": "Acquisitions, business combinations, purchase accounting, consolidation, variable interests, divestitures, or discontinued operations.",
+  "Reporting, Controls, Estimates and Audit Procedures": "Cross-cutting financial reporting, controls, estimates, valuations, disclosures, journal entries, fraud, materiality, planning, or audit procedures when no more specific account class dominates.",
+  "Credit, Loans, Deposits and Insurance": "Loans, credit losses, deposits, insurance or reinsurance, premiums, claims, and related reserves or allowances.",
+  "Investments and Financial Instruments": "Investments, securities, derivatives, financial instruments, foreign currency, partnership interests, or digital assets.",
+  "Debt, Equity and Liabilities": "Debt, equity, warrants, payables, accruals, other liabilities, contingencies, litigation, or capital transactions.",
+  "Cash and Other Assets": "Cash or assets not defensibly covered by a more specific supplied class.",
+  "Related Parties and Significant Transactions": "Related-party matters or significant, unusual, or certain transactions as the principal topic.",
+  "Expenses, Compensation and Benefits": "Expenses, payroll, stock compensation, pensions, post-retirement benefits, commissions, or employee benefit obligations.",
+  "Income Taxes": "Current or deferred income taxes, tax provisions, uncertain tax positions, or related controls and valuation allowances."
+}

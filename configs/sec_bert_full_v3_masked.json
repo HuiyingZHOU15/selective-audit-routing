@@ -1,0 +1,27 @@
+{
+  "version": "sec-bert-full-v3-masked-20261022",
+  "dataset": "data/processed/model_dataset_v2.csv",
+  "model_name": "nlpaueb/sec-bert-base",
+  "model_revision": "d511591f5e74052afdab08f1f14c4ff2a1e55749",
+  "target": "target_level1",
+  "text_column": "text_context_masked_v2",
+  "seed": 20261002,
+  "max_length": 256,
+  "epochs": 3,
+  "learning_rate": 0.00002,
+  "batch_size": 4,
+  "eval_batch_size": 8,
+  "gradient_accumulation": 4,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.1,
+  "gradient_clip_norm": 1.0,
+  "fp16": false,
+  "gradient_checkpointing": true,
+  "expected_clean_split_sizes": {
+    "train": 3982,
+    "validation": 927,
+    "calibration": 608,
+    "test": 890
+  },
+  "selection": "Masked-input sensitivity model. Best epoch selected only by clean-validation macro-F1; calibration and retrospective test labels never select weights or hyperparameters."
+}

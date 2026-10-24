@@ -1,0 +1,37 @@
+{
+  "version": "encoder-baseline-v1",
+  "status": "pre_specified_exploratory_benchmark",
+  "dataset": "data/processed/model_dataset_v2.csv",
+  "text_column": "text_context_v2",
+  "target": "target_level1",
+  "seed": 20261002,
+  "max_length": 256,
+  "epochs": 3,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.1,
+  "gradient_clip_norm": 1.0,
+  "models": {
+    "general_xsmall": {
+      "model_name": "microsoft/deberta-v3-xsmall",
+      "role": "modern_general_encoder",
+      "learning_rate": 0.000045,
+      "batch_size": 8,
+      "gradient_accumulation": 2
+    },
+    "sec_domain": {
+      "model_name": "nlpaueb/sec-bert-base",
+      "role": "sec_filing_domain_encoder",
+      "learning_rate": 0.00002,
+      "batch_size": 4,
+      "gradient_accumulation": 4
+    }
+  },
+  "selection": "best epoch by macro-F1 on clean validation; test never selects epoch or hyperparameters",
+  "final_evaluation": "clean retrospective test only; calibration remains untouched",
+  "resource_constraints": {
+    "training_device": "cpu because installed PyTorch is CPU-only",
+    "gpu_detected_but_unavailable_to_pytorch": "NVIDIA RTX 3050 Laptop 4GB",
+    "disk_free_at_design_gb": 1.44,
+    "checkpoint_policy": "keep best state in memory; do not write optimizer/model checkpoints"
+  }
+}

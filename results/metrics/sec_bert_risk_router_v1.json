@@ -1,0 +1,271 @@
+{
+  "version": "sec-bert-risk-router-v1-20261005",
+  "scope": {
+    "samples": 4613,
+    "reports": 477,
+    "errors": 305,
+    "base_accuracy": 0.9338825059614134
+  },
+  "crossfit": {
+    "folds": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "group": "report_id",
+    "features": [
+      "sec_confidence",
+      "sec_margin",
+      "sec_entropy",
+      "text_log_chars",
+      "text_log_words",
+      "context_reference",
+      "account_topic_hits",
+      "crosscut_hits",
+      "multi_topic",
+      "tfidf_disagree",
+      "small_confidence",
+      "small_margin",
+      "small_entropy",
+      "sec_prediction",
+      "context_quality"
+    ]
+  },
+  "discrimination": {
+    "class_aware_logistic_error_roc_auc": 0.9043076548396427,
+    "class_aware_logistic_error_average_precision": 0.4199747088831185,
+    "error_prevalence": 0.0661174940385866
+  },
+  "aurc": [
+    {
+      "method": "class_aware_logistic",
+      "aurc_discrete": 0.010121337487967461
+    },
+    {
+      "method": "confidence",
+      "aurc_discrete": 0.009957038234176308
+    },
+    {
+      "method": "entropy",
+      "aurc_discrete": 0.009993501953543073
+    },
+    {
+      "method": "margin",
+      "aurc_discrete": 0.00986578353713425
+    },
+    {
+      "method": "oracle",
+      "aurc_discrete": 0.0022427583786617635
+    },
+    {
+      "method": "random",
+      "aurc_discrete": 0.0704886345181936
+    }
+  ],
+  "primary_5pct_report_cluster_bootstrap": {
+    "random": {
+      "coverage": [
+        0.9498964587196411,
+        0.95,
+        0.9501049392787587
+      ],
+      "selective_accuracy": [
+        0.9195397764372998,
+        0.933454678380584,
+        0.9462185515279878
+      ],
+      "error_capture_rate": [
+        0.02265128841521279,
+        0.04610440043329858,
+        0.07382012633685657
+      ],
+      "referral_precision": [
+        0.03056685222840761,
+        0.06097560975609756,
+        0.09877474457215835
+      ],
+      "selective_risk_upper_95": [
+        0.05988529662148173,
+        0.07312283604135504,
+        0.08752132162145068
+      ]
+    },
+    "confidence": {
+      "coverage": [
+        0.9498964587196411,
+        0.95,
+        0.9501049392787587
+      ],
+      "selective_accuracy": [
+        0.9443689948485566,
+        0.9568374474460744,
+        0.9679314254914524
+      ],
+      "error_capture_rate": [
+        0.3154503553498877,
+        0.37976412810403265,
+        0.45386363636363636
+      ],
+      "referral_precision": [
+        0.4136165554628857,
+        0.5,
+        0.5954617988394584
+      ],
+      "selective_risk_upper_95": [
+        0.03669286454238953,
+        0.04865196026853356,
+        0.06169914920462017
+      ]
+    },
+    "margin": {
+      "coverage": [
+        0.9498964587196411,
+        0.95,
+        0.9501049392787587
+      ],
+      "selective_accuracy": [
+        0.9450324418448584,
+        0.9573136917162663,
+        0.9685023744408696
+      ],
+      "error_capture_rate": [
+        0.3239679609645273,
+        0.3870967741935484,
+        0.4625890356142457
+      ],
+      "referral_precision": [
+        0.4266021316783594,
+        0.5114700620856572,
+        0.6043767451136817
+      ],
+      "selective_risk_upper_95": [
+        0.036143590509660616,
+        0.048087184548394515,
+        0.06089161237876794
+      ]
+    },
+    "entropy": {
+      "coverage": [
+        0.9498964587196411,
+        0.95,
+        0.9501049392787587
+      ],
+      "selective_accuracy": [
+        0.9440652286260929,
+        0.9568402377796219,
+        0.9677763489983879
+      ],
+      "error_capture_rate": [
+        0.3145315427577613,
+        0.3796882325363338,
+        0.45292224080267557
+      ],
+      "referral_precision": [
+        0.41223920469475345,
+        0.5020164240995203,
+        0.5903233880656789
+      ],
+      "selective_risk_upper_95": [
+        0.036794899904248383,
+        0.04856405732755627,
+        0.06176738625512403
+      ]
+    },
+    "class_aware_logistic": {
+      "coverage": [
+        0.9498964587196411,
+        0.95,
+        0.9501049392787587
+      ],
+      "selective_accuracy": [
+        0.9439883827643334,
+        0.9559947693493047,
+        0.9666596189042734
+      ],
+      "error_capture_rate": [
+        0.30992937214095406,
+        0.36920428126507876,
+        0.4383701109527056
+      ],
+      "referral_precision": [
+        0.41281054639928555,
+        0.4871223286661754,
+        0.5808691792841693
+      ],
+      "selective_risk_upper_95": [
+        0.03825692168110734,
+        0.049447850575286445,
+        0.06210198387696005
+      ]
+    }
+  },
+  "development_first_sample_level_binomial_screened_points": [
+    {
+      "samples": 4613,
+      "referred": 216,
+      "referral_rate": 0.04682419249945805,
+      "coverage": 0.953175807500542,
+      "selective_accuracy": 0.9556515806231521,
+      "selective_risk": 0.04434841937684785,
+      "selective_risk_upper_95": 0.04979824518136939,
+      "accepted_macro_f1": 0.9298203560664019,
+      "errors_remaining": 195,
+      "errors_captured": 110,
+      "error_capture_rate": 0.36065573770491804,
+      "referral_precision": 0.5092592592592593,
+      "oracle_assisted_accuracy_upper_bound": 0.9577281595491004,
+      "method": "confidence"
+    },
+    {
+      "samples": 4613,
+      "referred": 203,
+      "referral_rate": 0.04400606980273141,
+      "coverage": 0.9559939301972686,
+      "selective_accuracy": 0.9555555555555556,
+      "selective_risk": 0.044444444444444446,
+      "selective_risk_upper_95": 0.049890916237738864,
+      "accepted_macro_f1": 0.9301630348597426,
+      "errors_remaining": 196,
+      "errors_captured": 109,
+      "error_capture_rate": 0.35737704918032787,
+      "referral_precision": 0.5369458128078818,
+      "oracle_assisted_accuracy_upper_bound": 0.9575113808801214,
+      "method": "margin"
+    },
+    {
+      "samples": 4613,
+      "referred": 219,
+      "referral_rate": 0.04747452850639497,
+      "coverage": 0.952525471493605,
+      "selective_accuracy": 0.9556213017751479,
+      "selective_risk": 0.04437869822485207,
+      "selective_risk_upper_95": 0.049832147755885334,
+      "accepted_macro_f1": 0.9295296488984067,
+      "errors_remaining": 195,
+      "errors_captured": 110,
+      "error_capture_rate": 0.36065573770491804,
+      "referral_precision": 0.502283105022831,
+      "oracle_assisted_accuracy_upper_bound": 0.9577281595491004,
+      "method": "entropy"
+    },
+    {
+      "samples": 4613,
+      "referred": 220,
+      "referral_rate": 0.04769130717537394,
+      "coverage": 0.952308692824626,
+      "selective_accuracy": 0.9556111996357842,
+      "selective_risk": 0.044388800364215796,
+      "selective_risk_upper_95": 0.04984345887416851,
+      "accepted_macro_f1": 0.9285533708561166,
+      "errors_remaining": 195,
+      "errors_captured": 110,
+      "error_capture_rate": 0.36065573770491804,
+      "referral_precision": 0.5,
+      "oracle_assisted_accuracy_upper_bound": 0.9577281595491004,
+      "method": "class_aware_logistic"
+    }
+  ],
+  "interpretation_guardrail": "The binomial upper bound treats samples as independent and is only a development screening statistic. Report-cluster bootstrap intervals at 5% referral still cross the 95% accuracy target. Therefore the current system is risk-aware, not yet risk-controlled. The deployment threshold must be selected on calibration and evaluated unchanged on later data."
+}

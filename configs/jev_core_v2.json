@@ -1,0 +1,13 @@
+{
+  "version": "jev-core-v2-1",
+  "endpoint": "https://api.typesafe.ai/v1/systemone",
+  "model": "jev-latest",
+  "api_key_env": "TYPESAFE_API_KEY",
+  "candidate_table": "data/interim/deepseek_core_v2_candidates.csv",
+  "calibration_candidate_table": "data/interim/jev_calibration_v2_candidates.csv",
+  "label_definitions": "configs/llm_label_definitions_v2.json",
+  "response_log": "artifacts/llm_responses/jev_core_v2.jsonl",
+  "calibration_response_log": "artifacts/llm_responses/jev_calibration_v2.jsonl",
+  "request_timeout_seconds": 60,
+  "max_attempts": 3
+}

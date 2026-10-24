@@ -1,0 +1,11 @@
+{
+  "version": "sec-bert-temperature-calibration-v1-20261013",
+  "calibration_logits": "results/tables/sec_bert_calibration_logits_v1.csv",
+  "primary_risk_score": "calibrated_margin",
+  "secondary_risk_score": "calibrated_confidence",
+  "referral_budgets": [0.05, 0.10],
+  "ece_bins": 10,
+  "bootstrap_replicates": 2000,
+  "random_seed": 20261013,
+  "protocol": "Temperature is fit on the 608-sample calibration split. Margin was preselected on development OOF. Calibration selects only the 5% and 10% thresholds; retrospective test is not used."
+}

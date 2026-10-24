@@ -1,0 +1,32 @@
+{
+  "version": "sec-bert-calibration-export-v1-20261005",
+  "model": "nlpaueb/sec-bert-base",
+  "best_epoch": 3,
+  "validation_history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.264344362852474,
+      "accuracy": 0.9137001078748651,
+      "macro_f1": 0.8564944703708428
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.20015924441231692,
+      "accuracy": 0.9341963322545846,
+      "macro_f1": 0.8960123013931091
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.10625150363263955,
+      "accuracy": 0.9363538295577131,
+      "macro_f1": 0.8961322098637861
+    }
+  ],
+  "calibration": {
+    "samples": 608,
+    "accuracy_before_calibration": 0.9342105263157895,
+    "macro_f1_before_calibration": 0.91412642448778
+  },
+  "elapsed_seconds": 370.33173121699997,
+  "guardrail": "Calibration labels were not used for fitting or epoch selection."
+}

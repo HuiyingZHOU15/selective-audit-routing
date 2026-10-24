@@ -1,0 +1,32 @@
+{
+  "version": "pcaob-rag-pilot-v1",
+  "seed": 20261001,
+  "development_oof": "data/processed/pcaob_development_oof_v1.csv",
+  "model_dataset": "data/processed/model_dataset_v2.csv",
+  "label_definitions": "configs/llm_label_definitions_v2.json",
+  "system_prompt": "prompts/deepseek_system_rag_pilot_v1.txt",
+  "standards_cache": "../rag_pilot_runtime/pcaob_standards_v1.json",
+  "sample_table": "../rag_pilot_runtime/pcaob_rag_pilot_v1_samples.csv",
+  "candidate_table": "../rag_pilot_runtime/pcaob_rag_pilot_v1_candidates.csv",
+  "response_log": "../rag_pilot_runtime/pcaob_rag_pilot_v1_responses.jsonl",
+  "audit_table": "../rag_pilot_runtime/pcaob_rag_pilot_v1_audit.csv",
+  "metrics": "../rag_pilot_runtime/pcaob_rag_pilot_v1_metrics.json",
+  "report": "../rag_pilot_runtime/pcaob_rag_pilot_v1_report_zh.md",
+  "sample_counts": {
+    "small_wrong": 60,
+    "small_correct_risk": 30,
+    "small_correct_control": 30
+  },
+  "conditions": ["direct", "report_rag", "standards_rag", "combined_rag"],
+  "report_top_k": 3,
+  "standards_top_k": 3,
+  "provider": "deepseek",
+  "base_url": "https://api.deepseek.com",
+  "model": "deepseek-flash",
+  "api_key_env": "DEEPSEEK_API_KEY",
+  "temperature": 0.0,
+  "reasoning_effort": "low",
+  "max_output_tokens": 2000,
+  "max_attempts": 3,
+  "request_timeout_seconds": 90
+}

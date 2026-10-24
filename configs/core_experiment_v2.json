@@ -1,0 +1,24 @@
+{
+  "version": "v2-core-1",
+  "dataset": "data/processed/model_dataset_v2.csv",
+  "model": "artifacts/models/tfidf_lr_context_taxonomy_v2.joblib",
+  "text_column": "text_context_v2",
+  "target": "target_level1",
+  "calibration_method": "sigmoid",
+  "routing_budgets": [0.10, 0.20, 0.30],
+  "ece_bins": 15,
+  "random_routing_iterations": 2000,
+  "bootstrap_iterations": 500,
+  "seed": 20260927,
+  "selection_rule": "route when calibrated maximum probability is below the clean calibration-set budget quantile",
+  "primary_endpoint": "full-test accuracy at fixed LLM call budget",
+  "secondary_endpoints": [
+    "macro_f1",
+    "selective_risk",
+    "automatic_coverage",
+    "human_review_rate",
+    "evidence_validity",
+    "latency",
+    "token_cost"
+  ]
+}

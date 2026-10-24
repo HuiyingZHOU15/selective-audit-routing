@@ -1,0 +1,23 @@
+{
+  "version": "finmr-structured-pilot-v1",
+  "dataset_dir": "data/external/finauditing_finmr_sub_v1",
+  "source_split": "train",
+  "holdout_split": "test",
+  "eligible_dqc": "DQC_US_0126",
+  "system_prompt": "prompts/finmr_system_v1.txt",
+  "candidate_table": "../rag_pilot_runtime/finmr_pilot_v1_candidates.csv",
+  "response_log": "../rag_pilot_runtime/finmr_pilot_v1_responses.jsonl",
+  "audit_table": "../rag_pilot_runtime/finmr_pilot_v1_audit.csv",
+  "metrics": "../rag_pilot_runtime/finmr_pilot_v1_metrics.json",
+  "report": "../rag_pilot_runtime/finmr_pilot_v1_report_zh.md",
+  "conditions": ["direct", "structured_rag"],
+  "provider": "deepseek",
+  "base_url": "https://api.deepseek.com",
+  "model": "deepseek-flash",
+  "api_key_env": "DEEPSEEK_API_KEY",
+  "temperature": 0.0,
+  "reasoning_effort": "low",
+  "max_output_tokens": 4000,
+  "max_attempts": 3,
+  "request_timeout_seconds": 120
+}

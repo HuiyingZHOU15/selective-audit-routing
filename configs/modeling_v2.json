@@ -1,0 +1,38 @@
+{
+  "version": "v2",
+  "dataset": "data/processed/model_dataset_v2.csv",
+  "target": "target_level1",
+  "variants": {
+    "original": "text_original",
+    "context": "text_context_v2",
+    "context_masked": "text_context_masked_v2"
+  },
+  "tfidf": {
+    "ngram_range": [1, 2],
+    "min_df": 2,
+    "max_df": 0.98,
+    "max_features": 50000,
+    "sublinear_tf": true
+  },
+  "embedding": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "cache_tag": "explicit_bert_vocab_v1",
+    "tokenizer_loading": "explicit BertTokenizer(vocab=...) for Transformers v5 compatibility with the legacy model config",
+    "pooling": "attention-mask mean pooling plus L2 normalization",
+    "max_length": 256,
+    "batch_size": 64,
+    "device": "cpu",
+    "torch_threads": 10
+  },
+  "classifier": {
+    "type": "LogisticRegression",
+    "class_weight": "balanced",
+    "c_grid": [0.25, 0.5, 1.0, 2.0, 4.0, 16.0, 64.0, 256.0, 1024.0],
+    "max_iter": 3000,
+    "random_seed": 20260927
+  },
+  "selection_metric": "macro_f1 on clean validation samples",
+  "final_fit": "train plus validation; calibration remains untouched",
+  "bootstrap_iterations": 500,
+  "bootstrap_seed": 20260927
+}

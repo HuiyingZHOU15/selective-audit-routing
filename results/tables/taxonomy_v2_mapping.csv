@@ -1,0 +1,253 @@
+raw_audit_area,target_level2,target_level1,samples,reports
+Business Combinations,Business Combinations,Business Combinations and Consolidation,265,42
+Business Combination,Business Combinations,Business Combinations and Consolidation,250,54
+Variable Interest Entities,Variable Interest Entities,Business Combinations and Consolidation,20,10
+Acquisition,Acquisition,Business Combinations and Consolidation,9,2
+Discontinued Operations,Discontinued Operations,Business Combinations and Consolidation,8,4
+Gains on Discontinued Operations,Gains on Discontinued Operations,Business Combinations and Consolidation,4,1
+Asset Acquisition,Asset Acquisition,Business Combinations and Consolidation,2,2
+Planned Divestiture of Certain Subsidiaries,Planned Divestiture of Certain Subsidiaries,Business Combinations and Consolidation,2,1
+Acquisition of Assets,Acquisition of Assets,Business Combinations and Consolidation,1,1
+Acquisitions,Acquisitions,Business Combinations and Consolidation,1,1
+Certain Assets,Certain Assets,Cash and Other Assets,133,38
+Cash,Cash,Cash and Other Assets,28,18
+Other Assets,Other Assets,Cash and Other Assets,18,4
+Cash and Cash Equivalents,Cash and Cash Equivalents,Cash and Other Assets,16,13
+Certain Asset,Certain Assets,Cash and Other Assets,11,5
+Statement of Cash Flows,Statement of Cash Flows,Cash and Other Assets,6,6
+Significant Assets,Significant Assets,Cash and Other Assets,5,1
+Cash Equivalents,Cash Equivalents,Cash and Other Assets,3,1
+Significant Asset,Significant Assets,Cash and Other Assets,3,1
+Cash Flows,Statement of Cash Flows,Cash and Other Assets,1,1
+Restricted Cash,Restricted Cash,Cash and Other Assets,1,1
+Allowance for Loan Losses,Allowance for Loan Losses,"Credit, Loans, Deposits and Insurance",264,65
+Allowance for Credit Losses,Allowance for Credit Losses,"Credit, Loans, Deposits and Insurance",130,30
+Deposit Liabilities,Deposit Liabilities,"Credit, Loans, Deposits and Insurance",50,18
+"Insurance-related Assets and Liabilities, Including Insurance Reserves","Insurance-related Assets and Liabilities, Including Insurance Reserves","Credit, Loans, Deposits and Insurance",14,3
+Loans,Loans,"Credit, Loans, Deposits and Insurance",11,8
+Allowance for Loan and Lease Losses,Allowance for Loan and Lease Losses,"Credit, Loans, Deposits and Insurance",6,1
+Insurance Reserves,Insurance Reserves,"Credit, Loans, Deposits and Insurance",6,2
+Liabilities for Self-Insurance Reserves,Liabilities for Self-Insurance Reserves,"Credit, Loans, Deposits and Insurance",6,2
+Deposits,Deposits,"Credit, Loans, Deposits and Insurance",5,3
+Allowance for Credit/Loan Losses,Allowance for Credit/Loan Losses,"Credit, Loans, Deposits and Insurance",4,1
+Liabilities for Insurance Reserves,Liabilities for Insurance Reserves,"Credit, Loans, Deposits and Insurance",4,1
+Insurance-Related Liability,Insurance-Related Liability,"Credit, Loans, Deposits and Insurance",3,1
+Insurance-related Liabilities,Insurance-related Liabilities,"Credit, Loans, Deposits and Insurance",3,1
+Insurance-Related Liabilities,Insurance-Related Liabilities,"Credit, Loans, Deposits and Insurance",2,1
+Liabilities for Medical Claims,Liabilities for Medical Claims,"Credit, Loans, Deposits and Insurance",2,1
+Liabilities for Unpaid Insurance Claims,Liabilities for Unpaid Insurance Claims,"Credit, Loans, Deposits and Insurance",2,1
+Loans and Deposits,Loans and Deposits,"Credit, Loans, Deposits and Insurance",2,1
+Loss Reserves,Loss Reserves,"Credit, Loans, Deposits and Insurance",2,1
+Reinsurance Recoverable,Reinsurance Recoverable,"Credit, Loans, Deposits and Insurance",2,1
+Liabilities for Incurred But Not Reported Claims,Liabilities for Incurred But Not Reported Claims,"Credit, Loans, Deposits and Insurance",1,1
+Debt,Debt,"Debt, Equity and Liabilities",68,27
+Warrants,Warrants,"Debt, Equity and Liabilities",53,18
+Certain Assets and Liabilities,Certain Assets and Liabilities,"Debt, Equity and Liabilities",34,7
+Equity,Equity,"Debt, Equity and Liabilities",25,10
+Accruals and Other Liabilities,Accruals and Other Liabilities,"Debt, Equity and Liabilities",22,5
+Convertible Debt,Convertible Debt,"Debt, Equity and Liabilities",19,5
+Equity and Equity-Related Transactions,Equity and Equity-Related Transactions,"Debt, Equity and Liabilities",17,6
+Certain Liabilities,Certain Liabilities,"Debt, Equity and Liabilities",15,8
+Accounts Payable,Accounts Payable,"Debt, Equity and Liabilities",9,4
+Certain Liability,Certain Liability,"Debt, Equity and Liabilities",9,3
+Liabilities,Liabilities,"Debt, Equity and Liabilities",9,3
+Other Liabilities,Other Liabilities,"Debt, Equity and Liabilities",9,5
+Equity-Related Transactions,Equity-Related Transactions,"Debt, Equity and Liabilities",8,5
+Certain Asset and Liability,Certain Asset and Liability,"Debt, Equity and Liabilities",7,2
+Preferred Shares,Preferred Shares,"Debt, Equity and Liabilities",5,1
+Convertible Notes and Warrants,Convertible Notes and Warrants,"Debt, Equity and Liabilities",4,1
+Equity Transactions,Equity Transactions,"Debt, Equity and Liabilities",4,1
+Common Stock,Common Stock,"Debt, Equity and Liabilities",3,2
+Equity and Warrants,Equity and Warrants,"Debt, Equity and Liabilities",3,1
+Accrued Liabilities,Accrued Liabilities,"Debt, Equity and Liabilities",2,2
+Accrued Liabilities and Related Expenses,Accrued Liabilities and Related Expenses,"Debt, Equity and Liabilities",2,1
+Accrued Liability,Accrued Liability,"Debt, Equity and Liabilities",2,1
+Contingent Liability,Contingent Liability,"Debt, Equity and Liabilities",2,2
+Convertible Notes Payable,Convertible Notes Payable,"Debt, Equity and Liabilities",2,1
+Environmental Liabilities,Environmental Liabilities,"Debt, Equity and Liabilities",2,1
+Equity & Equity-Related Transactions,Equity and Equity-Related Transactions,"Debt, Equity and Liabilities",2,2
+Litigation Contingencies,Litigation Contingencies,"Debt, Equity and Liabilities",2,1
+Warrant Liability,Warrant Liability,"Debt, Equity and Liabilities",2,1
+Accruals and other liabilities,Accruals and other liabilities,"Debt, Equity and Liabilities",1,1
+Certain Assets and Related Liabilities,Certain Assets and Related Liabilities,"Debt, Equity and Liabilities",1,1
+Common Shares,Common Shares,"Debt, Equity and Liabilities",1,1
+Contingent Consideration Liability,Contingent Consideration Liability,"Debt, Equity and Liabilities",1,1
+Equity Instruments,Equity Instruments,"Debt, Equity and Liabilities",1,1
+Equity and Equity Related Transactions,Equity and Equity-Related Transactions,"Debt, Equity and Liabilities",1,1
+Equity and equity-related transactions,Equity and Equity-Related Transactions,"Debt, Equity and Liabilities",1,1
+Equity-Related Transaction,Equity and Equity-Related Transactions,"Debt, Equity and Liabilities",1,1
+Financial Liability,Financial Liability,"Debt, Equity and Liabilities",1,1
+Liability,Liability,"Debt, Equity and Liabilities",1,1
+"Litigation, Claims, and Assessments","Litigation, Claims, and Assessments","Debt, Equity and Liabilities",1,1
+Other Equity-Based Transactions,Other Equity-Based Transactions,"Debt, Equity and Liabilities",1,1
+Preferred Stock,Preferred Stock,"Debt, Equity and Liabilities",1,1
+Redeemable Common Stock,Redeemable Common Stock,"Debt, Equity and Liabilities",1,1
+Related Party Liabilities,Related Party Liabilities,"Debt, Equity and Liabilities",1,1
+Related Party Payables,Related Party Payables,"Debt, Equity and Liabilities",1,1
+Sales Commission Expense and Sales Commission Payable,Sales Commission Expense and Sales Commission Payable,"Debt, Equity and Liabilities",1,1
+Trade Payables,Trade Payables,"Debt, Equity and Liabilities",1,1
+Warrants and Forward Purchase Agreements,Warrants and Forward Purchase Agreements,"Debt, Equity and Liabilities",1,1
+Expenses,Expenses,"Expenses, Compensation and Benefits",28,11
+Payroll Expenses,Payroll Expenses,"Expenses, Compensation and Benefits",12,6
+Stock-Based Compensation,Stock-Based Compensation,"Expenses, Compensation and Benefits",12,9
+Operating Expenses,Operating Expenses,"Expenses, Compensation and Benefits",7,5
+Participant Distributions,Participant Distributions,"Expenses, Compensation and Benefits",7,4
+Participant and Employer Contributions,Participant and Employer Contributions,"Expenses, Compensation and Benefits",6,3
+Pension Assets and Liabilities,Pension Assets and Liabilities,"Expenses, Compensation and Benefits",6,2
+Research and development Expenses,Research and Development Expenses,"Expenses, Compensation and Benefits",3,1
+Accrued Expenses,Accrued Expenses,"Expenses, Compensation and Benefits",2,1
+Participant Contributions,Participant Contributions,"Expenses, Compensation and Benefits",2,1
+Pension Assets,Pension Assets,"Expenses, Compensation and Benefits",2,2
+Pension Liabilities,Pension Liabilities,"Expenses, Compensation and Benefits",2,2
+Share-Based Payment Transactions,Share-Based Payment Transactions,"Expenses, Compensation and Benefits",2,1
+Accrued Expense,Accrued Expenses,"Expenses, Compensation and Benefits",1,1
+Benefits Paid to Participants,Benefits Paid to Participants,"Expenses, Compensation and Benefits",1,1
+Commissions Expense,Commissions Expense,"Expenses, Compensation and Benefits",1,1
+Expense,Expenses,"Expenses, Compensation and Benefits",1,1
+Expenses and Related Reimbursements,Expenses and Related Reimbursements,"Expenses, Compensation and Benefits",1,1
+Payroll Expense,Payroll Expenses,"Expenses, Compensation and Benefits",1,1
+Post-Retirement Benefit Obligations,Post-Retirement Benefit Obligations,"Expenses, Compensation and Benefits",1,1
+Research and Development Expenses,Research and Development Expenses,"Expenses, Compensation and Benefits",1,1
+Share-Based Compensation,Stock-Based Compensation,"Expenses, Compensation and Benefits",1,1
+Stock Compensation,Stock-Based Compensation,"Expenses, Compensation and Benefits",1,1
+Stock Compensation.,Stock-Based Compensation,"Expenses, Compensation and Benefits",1,1
+Income Taxes,Income Taxes,Income Taxes,65,22
+Deferred Income Taxes,Deferred Income Taxes,Income Taxes,1,1
+Inventory,Inventory,Inventory and Cost of Sales,615,154
+Cost of Sales,Cost of Sales,Inventory and Cost of Sales,2,1
+Work in Progress,Work in Progress,Inventory and Cost of Sales,1,1
+Investment Securities,Investment Securities,Investments and Financial Instruments,141,50
+Investments,Investments,Investments and Financial Instruments,98,37
+Derivatives,Derivatives,Investments and Financial Instruments,32,13
+Investment,Investment,Investments and Financial Instruments,21,9
+Other Investments,Other Investments,Investments and Financial Instruments,20,7
+Digital Assets,Digital Assets,Investments and Financial Instruments,14,5
+Equity-Method Investments,Equity-Method Investments,Investments and Financial Instruments,10,2
+Derivative Liabilities,Derivative Liabilities,Investments and Financial Instruments,9,5
+Convertible Notes and a Derivative Liability,Convertible Notes and a Derivative Liability,Investments and Financial Instruments,4,1
+Investment Income,Investment Income,Investments and Financial Instruments,4,1
+Long-Term Investments,Long-Term Investments,Investments and Financial Instruments,3,1
+Derivative Asset,Derivative Asset,Investments and Financial Instruments,2,1
+Financial Instruments,Financial Instruments,Investments and Financial Instruments,2,2
+Foreign Currency Translation,Foreign Currency Translation,Investments and Financial Instruments,2,1
+Partnership Interests,Partnership Interests,Investments and Financial Instruments,2,1
+Derivative Liability,Derivative Liability,Investments and Financial Instruments,1,1
+Short-term Investments,Short-term Investments,Investments and Financial Instruments,1,1
+Long-Lived Assets,Long-Lived Assets,Long-Lived and Intangible Assets,287,89
+Goodwill,Goodwill,Long-Lived and Intangible Assets,147,50
+Intangible Assets,Intangible Assets,Long-Lived and Intangible Assets,110,51
+Goodwill and Intangible Assets,Goodwill and Intangible Assets,Long-Lived and Intangible Assets,46,18
+Oil and Gas Properties,Oil and Gas Properties,Long-Lived and Intangible Assets,42,12
+Leases,Leases,Long-Lived and Intangible Assets,38,19
+"Property, Plant, and Equipment","Property, Plant, and Equipment",Long-Lived and Intangible Assets,13,2
+Long-lived Assets,Long-Lived Assets,Long-Lived and Intangible Assets,10,3
+Rental Properties,Rental Properties,Long-Lived and Intangible Assets,10,1
+Depreciation Expense,Depreciation Expense,Long-Lived and Intangible Assets,8,2
+Long-Lived Asset,Long-Lived Assets,Long-Lived and Intangible Assets,7,3
+Intangible Asset,Intangible Assets,Long-Lived and Intangible Assets,6,4
+Capitalized Internally Developed Software,Capitalized Internally Developed Software,Long-Lived and Intangible Assets,5,1
+Long-Lived,Long-Lived Assets,Long-Lived and Intangible Assets,5,1
+Real Estate Investment Properties,Real Estate Investment Properties,Long-Lived and Intangible Assets,5,2
+Mineral Reserves,Mineral Reserves,Long-Lived and Intangible Assets,4,1
+Mortgage Servicing Rights,Mortgage Servicing Rights,Long-Lived and Intangible Assets,4,2
+Asset Retirement Obligations,Asset Retirement Obligations,Long-Lived and Intangible Assets,3,3
+Capitalized Software,Capitalized Software,Long-Lived and Intangible Assets,3,1
+Exploration and Evaluation Assets,Exploration and Evaluation Assets,Long-Lived and Intangible Assets,3,1
+Assets Held for Sale,Assets Held for Sale,Long-Lived and Intangible Assets,2,1
+Depreciation and Amortization,Depreciation and Amortization,Long-Lived and Intangible Assets,2,1
+PP&E,"Property, Plant, and Equipment",Long-Lived and Intangible Assets,2,1
+"Plant, Property, and Equipment","Property, Plant, and Equipment",Long-Lived and Intangible Assets,2,1
+Proved Oil and Gas Reserves,Proved Oil and Gas Reserves,Long-Lived and Intangible Assets,2,1
+Reclamation and Restoration Provisions,Reclamation and Restoration Provisions,Long-Lived and Intangible Assets,2,1
+Acquired Real Estate Assets,Acquired Real Estate Assets,Long-Lived and Intangible Assets,1,1
+Long-Lived Assets and Depreciation Expense,Long-Lived Assets and Depreciation Expense,Long-Lived and Intangible Assets,1,1
+Non-Current Assets,Non-Current Assets,Long-Lived and Intangible Assets,1,1
+Prepayment for Land,Prepayment for Land,Long-Lived and Intangible Assets,1,1
+Prepayments,Prepayments,Long-Lived and Intangible Assets,1,1
+Related Party Transactions,Related Party Transactions,Related Parties and Significant Transactions,90,32
+Significant Transactions,Significant Transactions,Related Parties and Significant Transactions,28,9
+Significant Transaction,Significant Transactions,Related Parties and Significant Transactions,21,8
+Related Party Transaction,Related Party Transactions,Related Parties and Significant Transactions,8,3
+Certain Transaction,Certain Transactions,Related Parties and Significant Transactions,3,2
+Related Parties,Related Parties,Related Parties and Significant Transactions,3,2
+Certain Transactions,Certain Transactions,Related Parties and Significant Transactions,2,2
+Related Party transactions,Related Party Transactions,Related Parties and Significant Transactions,1,1
+Journal Entries,Journal Entries,"Reporting, Controls, Estimates and Audit Procedures",189,113
+Significant Account,Significant Accounts,"Reporting, Controls, Estimates and Audit Procedures",80,31
+Significant Estimate,Significant Estimates,"Reporting, Controls, Estimates and Audit Procedures",62,16
+Significant Accounts,Significant Accounts,"Reporting, Controls, Estimates and Audit Procedures",38,10
+Going Concern,Going Concern,"Reporting, Controls, Estimates and Audit Procedures",31,17
+Audit Evidence,Audit Evidence,"Reporting, Controls, Estimates and Audit Procedures",18,9
+Financial Reporting and Close,Financial Reporting and Close,"Reporting, Controls, Estimates and Audit Procedures",13,5
+Income Statement Account,Income Statement Account,"Reporting, Controls, Estimates and Audit Procedures",12,5
+Balance Sheet Account,Balance Sheet Account,"Reporting, Controls, Estimates and Audit Procedures",9,2
+Certain Significant Accounts,Certain Significant Accounts,"Reporting, Controls, Estimates and Audit Procedures",8,2
+Uncorrected Misstatements,Uncorrected Misstatements,"Reporting, Controls, Estimates and Audit Procedures",8,7
+An Income Statement Account,An Income Statement Account,"Reporting, Controls, Estimates and Audit Procedures",7,4
+Evaluating Control Deficiencies,Evaluating Control Deficiencies,"Reporting, Controls, Estimates and Audit Procedures",6,3
+Segment Reporting,Segment Reporting,"Reporting, Controls, Estimates and Audit Procedures",6,3
+Significant Accounts and Disclosures,Significant Accounts and Disclosures,"Reporting, Controls, Estimates and Audit Procedures",6,4
+Change Management,Change Management,"Reporting, Controls, Estimates and Audit Procedures",4,1
+Financial Reporting Process and Journal Entries,Financial Reporting Process and Journal Entries,"Reporting, Controls, Estimates and Audit Procedures",4,1
+Information Technology General Controls,Information Technology General Controls,"Reporting, Controls, Estimates and Audit Procedures",4,2
+Significant Estimates,Significant Estimates,"Reporting, Controls, Estimates and Audit Procedures",4,2
+Subsequent Events,Subsequent Events,"Reporting, Controls, Estimates and Audit Procedures",4,4
+Testing Controls,Testing Controls,"Reporting, Controls, Estimates and Audit Procedures",4,1
+A Significant Estimate,Significant Estimates,"Reporting, Controls, Estimates and Audit Procedures",3,1
+Control Deficiencies,Control Deficiencies,"Reporting, Controls, Estimates and Audit Procedures",3,3
+Estimate,Estimate,"Reporting, Controls, Estimates and Audit Procedures",3,1
+Financial Statement Presentation and Disclosures,Financial Statement Presentation and Disclosures,"Reporting, Controls, Estimates and Audit Procedures",3,3
+Possible Illegal Acts,Possible Illegal Acts,"Reporting, Controls, Estimates and Audit Procedures",3,2
+A Significant Account,Significant Accounts,"Reporting, Controls, Estimates and Audit Procedures",2,1
+Audit Planning,Audit Planning,"Reporting, Controls, Estimates and Audit Procedures",2,1
+Corrected and Uncorrected Misstatements,Corrected and Uncorrected Misstatements,"Reporting, Controls, Estimates and Audit Procedures",2,1
+Earnings Per Share,Earnings Per Share,"Reporting, Controls, Estimates and Audit Procedures",2,1
+Financial Reporting,Financial Reporting,"Reporting, Controls, Estimates and Audit Procedures",2,2
+Financial Statement Presentation,Financial Statement Presentation and Disclosures,"Reporting, Controls, Estimates and Audit Procedures",2,2
+Fraud Considerations,Fraud Considerations,"Reporting, Controls, Estimates and Audit Procedures",2,1
+Fraud Procedures,Fraud Procedures,"Reporting, Controls, Estimates and Audit Procedures",2,1
+Planning Materiality,Planning Materiality,"Reporting, Controls, Estimates and Audit Procedures",2,2
+Segment Disclosures,Segment Disclosures,"Reporting, Controls, Estimates and Audit Procedures",2,1
+Certain Income Statement Transactions,Certain Income Statement Transactions,"Reporting, Controls, Estimates and Audit Procedures",1,1
+Comparability of Financial Statements,Comparability of Financial Statements,"Reporting, Controls, Estimates and Audit Procedures",1,1
+Estimates,Estimates,"Reporting, Controls, Estimates and Audit Procedures",1,1
+Evaluation of Control Deficiencies,Evaluating Control Deficiencies,"Reporting, Controls, Estimates and Audit Procedures",1,1
+Financial Reporting Process,Financial Reporting Process,"Reporting, Controls, Estimates and Audit Procedures",1,1
+ITGCs,Information Technology General Controls,"Reporting, Controls, Estimates and Audit Procedures",1,1
+Information Technology General Controls (ITGCs),Information Technology General Controls,"Reporting, Controls, Estimates and Audit Procedures",1,1
+Period-End Financial Reporting Process,Period-End Financial Reporting Process,"Reporting, Controls, Estimates and Audit Procedures",1,1
+Significant Disclosure,Significant Accounts and Disclosures,"Reporting, Controls, Estimates and Audit Procedures",1,1
+Significant accounts and disclosures,Significant Accounts and Disclosures,"Reporting, Controls, Estimates and Audit Procedures",1,1
+Revenue,Revenue,Revenue and Receivables,1741,362
+Revenue and Related Accounts,Revenue and Related Accounts,Revenue and Receivables,242,40
+Accounts Receivable,Accounts Receivable,Revenue and Receivables,157,69
+Revenue and Accounts Receivable,Revenue and Accounts Receivable,Revenue and Receivables,22,6
+Revenue and Deferred Revenue,Revenue and Deferred Revenue,Revenue and Receivables,19,5
+Loans Receivable,Loans Receivable,Revenue and Receivables,18,6
+Allowance for Doubtful Accounts,Allowance for Doubtful Accounts,Revenue and Receivables,17,14
+Deferred Revenue,Deferred Revenue,Revenue and Receivables,14,10
+Receivables,Receivables,Revenue and Receivables,13,5
+Fee and Commission Income and Related Receivables,Fee and Commission Income and Related Receivables,Revenue and Receivables,7,1
+Certain Revenue,Certain Revenue,Revenue and Receivables,4,1
+Notes Receivable,Notes Receivable,Revenue and Receivables,4,2
+Other Income,Other Income,Revenue and Receivables,4,3
+Related Party Receivable,Related Party Receivable,Revenue and Receivables,4,3
+Certain Receivables,Certain Receivables,Revenue and Receivables,3,1
+Dividend Income,Dividend Income,Revenue and Receivables,3,1
+Revenue and Contract Liabilities,Revenue and Contract Liabilities,Revenue and Receivables,3,1
+Servicing Fee Income,Servicing Fee Income,Revenue and Receivables,3,1
+Unbilled Receivables,Unbilled Receivables,Revenue and Receivables,3,2
+Related Party Receivables,Related Party Receivables,Revenue and Receivables,2,1
+Revenue and Related Receivables,Revenue and Related Receivables,Revenue and Receivables,2,1
+"Revenue, including Allowances","Revenue, including Allowances",Revenue and Receivables,2,1
+Accounts Receivable and Related Assets,Accounts Receivable and Related Assets,Revenue and Receivables,1,1
+Accounts Receivables,Accounts Receivable,Revenue and Receivables,1,1
+Accrued Revenue and Deferred Revenue,Accrued Revenue and Deferred Revenue,Revenue and Receivables,1,1
+Certain Receivable,Certain Receivable,Revenue and Receivables,1,1
+Contributions,Contributions,Revenue and Receivables,1,1
+Other Accounts Receivables,Other Accounts Receivables,Revenue and Receivables,1,1
+Other Receivables,Other Receivables,Revenue and Receivables,1,1
+Revenue and Trade Receivables,Revenue and Trade Receivables,Revenue and Receivables,1,1
+Revenue-Related Account,Revenue-Related Account,Revenue and Receivables,1,1
+Sales Discounts and Related Accruals,Sales Discounts and Related Accruals,Revenue and Receivables,1,1
+Trade Receivables,Trade Receivables,Revenue and Receivables,1,1

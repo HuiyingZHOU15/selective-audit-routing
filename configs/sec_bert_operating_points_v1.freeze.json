@@ -1,0 +1,32 @@
+{
+  "version": "sec-bert-operating-points-v1-frozen-20261013",
+  "model": "nlpaueb/sec-bert-base",
+  "model_recipe": "sec-bert-calibration-export-v1-20261005",
+  "temperature": 1.1989779352903378,
+  "probability_transform": "softmax(logits / temperature)",
+  "primary_score": "top1_probability_minus_top2_probability",
+  "decision_operator": "refer_if_score_below",
+  "operating_points": {
+    "primary_5pct": {
+      "threshold": 0.5691283109492091,
+      "calibration_referrals": 30,
+      "calibration_samples": 608,
+      "calibration_coverage": 0.9506578947368421,
+      "calibration_selective_accuracy": 0.9515570934256056
+    },
+    "safety_10pct": {
+      "threshold": 0.8602307794324395,
+      "calibration_referrals": 61,
+      "calibration_samples": 608,
+      "calibration_coverage": 0.899671052631579,
+      "calibration_selective_accuracy": 0.9707495429616088
+    }
+  },
+  "selection_protocol": {
+    "score_selected_on": "clean development report-grouped OOF",
+    "temperature_and_thresholds_selected_on": "608-sample clean calibration split",
+    "retrospective_test_used_for_selection": false,
+    "future_temporal_holdout_used_for_selection": false
+  },
+  "status": "frozen_retrospective_test_complete_pending_temporal_holdout"
+}

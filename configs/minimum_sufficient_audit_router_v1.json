@@ -1,0 +1,55 @@
+{
+  "version": "minimum-sufficient-audit-router-v1",
+  "status": "frozen",
+  "frozen_date": "2026-10-02",
+  "scope": "development-only rule; confirmatory deployment not yet authorized",
+  "objective": "choose the lowest-cost path that can produce an evidence-verifiable answer without increasing observed harm",
+  "rules": [
+    {
+      "priority": 1,
+      "name": "executable_numeric_evidence",
+      "applies_when": {
+        "task_family": "structured_xbrl_numeric_verification",
+        "target_fact_present": true,
+        "calculation_arcs_present": true,
+        "all_required_child_facts_same_context": true,
+        "all_values_numeric": true
+      },
+      "route": "structured_retrieval_plus_deterministic_checker",
+      "takeover_gate": "parsed target and checker completion must both pass",
+      "llm_role": "optional explanation/fallback only; deterministic value is authoritative"
+    },
+    {
+      "priority": 2,
+      "name": "unsupported_or_incomplete_evidence",
+      "applies_when": {
+        "any_required_evidence_check_failed": true
+      },
+      "route": "no_automatic_takeover",
+      "takeover_gate": "retain existing answer or apply separately calibrated risk/human gate",
+      "llm_role": "experimental; must not overwrite solely on confidence"
+    },
+    {
+      "priority": 3,
+      "name": "pcaob_narrative_classification",
+      "applies_when": {
+        "task_family": "pcaob_narrative_classification"
+      },
+      "route": "existing_cheap_model",
+      "takeover_gate": "report-RAG remains experimental until a prospective benefit selector is validated",
+      "llm_role": "no automatic takeover under router v1"
+    }
+  ],
+  "frozen_parameters": {
+    "finmr_supported_rule_family": "DQC_US_0126",
+    "same_context_required": true,
+    "numeric_equality": "exact decimal value after comma and parenthesis normalization",
+    "max_human_referral_target": 0.05
+  },
+  "explicit_non_claims": [
+    "does not solve all previous PCAOB errors",
+    "does not establish a learned router",
+    "does not establish 95 percent final accuracy",
+    "does not generalize to evidence-truncated FinMR queries"
+  ]
+}

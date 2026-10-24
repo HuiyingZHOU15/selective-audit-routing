@@ -1,0 +1,13 @@
+{
+  "version": "pcaob-routing-failure-analysis-v1",
+  "development_table": "results/tables/utility_router_development_oof_v1.csv",
+  "calibration_table": "results/tables/utility_router_calibration_v1.csv",
+  "test_table": "results/tables/utility_router_test_v1.csv",
+  "model_dataset": "data/processed/model_dataset_v2.csv",
+  "router_metrics": "results/metrics/utility_router_v1.json",
+  "maximum_budget": 0.30,
+  "budget_step": 0.01,
+  "bootstrap_iterations": 4000,
+  "random_seed": 20261001,
+  "test_status": "retrospective_after_prior_inspection"
+}

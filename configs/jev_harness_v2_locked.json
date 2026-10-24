@@ -1,0 +1,8 @@
+{
+  "version": "jev-harness-v2-locked",
+  "selection_split": "calibration",
+  "routing_budget": 0.2,
+  "jev_confidence_threshold": 0.7,
+  "fallback": "small_model",
+  "selection_objective": "maximize calibration macro_f1; then accuracy; then fewer Jev uses; then lower routed count; then higher threshold"
+}

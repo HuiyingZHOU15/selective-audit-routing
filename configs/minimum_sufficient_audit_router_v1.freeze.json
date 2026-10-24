@@ -1,0 +1,12 @@
+{
+  "version": "minimum-sufficient-audit-router-v1",
+  "frozen_date": "2026-10-02",
+  "rule_file": "configs/minimum_sufficient_audit_router_v1.json",
+  "rule_file_sha256": "028315058388355a742fff8c46b2b6b49104a4168f6029e2bc0214450f8d6910",
+  "evidence_files": [
+    "../rag_pilot_runtime/finmr_pilot_v1_audit.csv",
+    "../rag_pilot_runtime/pcaob_rag_pilot_v1_audit.csv",
+    "results/tables/utility_router_test_v1.csv"
+  ],
+  "change_policy": "Any rule, threshold, supported task family, or takeover-gate change requires a new version; v1 must not be edited in place."
+}

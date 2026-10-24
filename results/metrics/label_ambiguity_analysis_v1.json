@@ -1,0 +1,354 @@
+{
+  "version": "label-ambiguity-analysis-v1-20261013",
+  "definitions": {
+    "correctness": "agreement_with_PCAOB_derived_target_level1",
+    "not_claimed": "objective_professional_validation_of_the_audit_area",
+    "primary_threshold": 0.5691283109492091,
+    "safety_threshold": 0.8602307794324395
+  },
+  "context_quality_test": [
+    {
+      "context_group": "context_added",
+      "raw_context_quality": "same_report_issuer_audit_area_preamble",
+      "samples": 60,
+      "reports": 13,
+      "accuracy": 0.9833333333333333,
+      "macro_f1_12class": 0.6560846560846562,
+      "mean_calibrated_margin": 0.9535230421954534,
+      "primary_referral_rate": 0.016666666666666666,
+      "primary_error_capture": 1.0,
+      "safety_referral_rate": 0.03333333333333333,
+      "safety_error_capture": 1.0,
+      "errors": 1
+    },
+    {
+      "context_group": "context_unresolved",
+      "raw_context_quality": "reference_without_available_preamble",
+      "samples": 132,
+      "reports": 45,
+      "accuracy": 0.9621212121212122,
+      "macro_f1_12class": 0.9539810384547227,
+      "mean_calibrated_margin": 0.9269462509510423,
+      "primary_referral_rate": 0.03787878787878788,
+      "primary_error_capture": 0.4,
+      "safety_referral_rate": 0.09090909090909091,
+      "safety_error_capture": 0.8,
+      "errors": 5
+    },
+    {
+      "context_group": "original_sufficient",
+      "raw_context_quality": "original_sufficient",
+      "samples": 698,
+      "reports": 93,
+      "accuracy": 0.9240687679083095,
+      "macro_f1_12class": 0.8786174781252455,
+      "mean_calibrated_margin": 0.9268179571429017,
+      "primary_referral_rate": 0.045845272206303724,
+      "primary_error_capture": 0.3018867924528302,
+      "safety_referral_rate": 0.08882521489971347,
+      "safety_error_capture": 0.660377358490566,
+      "errors": 53
+    }
+  ],
+  "ambiguity_features_clean_oof": [
+    {
+      "feature": "context_needs_context",
+      "level": "present",
+      "samples": 896,
+      "reports": 234,
+      "error_rate": 0.06919642857142858,
+      "mean_sec_margin": 0.9590654674162947,
+      "referral_rate_at_global_5pct": 0.05133928571428571,
+      "error_rate_ratio_present_vs_absent": 1.0584490740740742
+    },
+    {
+      "feature": "context_needs_context",
+      "level": "absent",
+      "samples": 3717,
+      "reports": 467,
+      "error_rate": 0.06537530266343826,
+      "mean_sec_margin": 0.9573662219535782,
+      "referral_rate_at_global_5pct": 0.05004035512510089,
+      "error_rate_ratio_present_vs_absent": 1.0584490740740742
+    },
+    {
+      "feature": "context_unresolved",
+      "level": "present",
+      "samples": 645,
+      "reports": 217,
+      "error_rate": 0.08217054263565891,
+      "mean_sec_margin": 0.9550073947534884,
+      "referral_rate_at_global_5pct": 0.06201550387596899,
+      "error_rate_ratio_present_vs_absent": 1.2938599729297404
+    },
+    {
+      "feature": "context_unresolved",
+      "level": "absent",
+      "samples": 3968,
+      "reports": 468,
+      "error_rate": 0.06350806451612903,
+      "mean_sec_margin": 0.9581333508544482,
+      "referral_rate_at_global_5pct": 0.04838709677419355,
+      "error_rate_ratio_present_vs_absent": 1.2938599729297404
+    },
+    {
+      "feature": "context_added",
+      "level": "present",
+      "samples": 250,
+      "reports": 78,
+      "error_rate": 0.036,
+      "mean_sec_margin": 0.9693958683559999,
+      "referral_rate_at_global_5pct": 0.024,
+      "error_rate_ratio_present_vs_absent": 0.5306351351351352
+    },
+    {
+      "feature": "context_added",
+      "level": "absent",
+      "samples": 4363,
+      "reports": 477,
+      "error_rate": 0.06784322713729085,
+      "mean_sec_margin": 0.9570258855643936,
+      "referral_rate_at_global_5pct": 0.05179922071968829,
+      "error_rate_ratio_present_vs_absent": 0.5306351351351352
+    },
+    {
+      "feature": "multi_topic",
+      "level": "present",
+      "samples": 997,
+      "reports": 235,
+      "error_rate": 0.09127382146439318,
+      "mean_sec_margin": 0.9495411091318455,
+      "referral_rate_at_global_5pct": 0.06018054162487462,
+      "error_rate_ratio_present_vs_absent": 1.5422716748375969
+    },
+    {
+      "feature": "multi_topic",
+      "level": "absent",
+      "samples": 3616,
+      "reports": 452,
+      "error_rate": 0.05918141592920354,
+      "mean_sec_margin": 0.9599448064164824,
+      "referral_rate_at_global_5pct": 0.04756637168141593,
+      "error_rate_ratio_present_vs_absent": 1.5422716748375969
+    },
+    {
+      "feature": "crosscut_hits_ge_2",
+      "level": "present",
+      "samples": 733,
+      "reports": 207,
+      "error_rate": 0.06957708049113233,
+      "mean_sec_margin": 0.9647182368731241,
+      "referral_rate_at_global_5pct": 0.03547066848567531,
+      "error_rate_ratio_present_vs_absent": 1.062830993329108
+    },
+    {
+      "feature": "crosscut_hits_ge_2",
+      "level": "absent",
+      "samples": 3880,
+      "reports": 463,
+      "error_rate": 0.0654639175257732,
+      "mean_sec_margin": 0.9563697005614562,
+      "referral_rate_at_global_5pct": 0.05309278350515464,
+      "error_rate_ratio_present_vs_absent": 1.062830993329108
+    },
+    {
+      "feature": "tfidf_disagreement",
+      "level": "present",
+      "samples": 478,
+      "reports": 190,
+      "error_rate": 0.33472803347280333,
+      "mean_sec_margin": 0.7886988166180962,
+      "referral_rate_at_global_5pct": 0.3117154811715481,
+      "error_rate_ratio_present_vs_absent": 9.545520126965807
+    },
+    {
+      "feature": "tfidf_disagreement",
+      "level": "absent",
+      "samples": 4135,
+      "reports": 462,
+      "error_rate": 0.03506650544135429,
+      "mean_sec_margin": 0.9772321333646917,
+      "referral_rate_at_global_5pct": 0.020072551390568318,
+      "error_rate_ratio_present_vs_absent": 9.545520126965807
+    }
+  ],
+  "top_test_confusion_pairs": [
+    {
+      "target_level1": "Investments and Financial Instruments",
+      "prediction": "Cash and Other Assets",
+      "errors": 6,
+      "reports": 2,
+      "mean_calibrated_margin": 0.9299870438045291,
+      "context_unresolved": 0
+    },
+    {
+      "target_level1": "Cash and Other Assets",
+      "prediction": "Long-Lived and Intangible Assets",
+      "errors": 4,
+      "reports": 2,
+      "mean_calibrated_margin": 0.6139140407939557,
+      "context_unresolved": 2
+    },
+    {
+      "target_level1": "Credit, Loans, Deposits and Insurance",
+      "prediction": "Business Combinations and Consolidation",
+      "errors": 3,
+      "reports": 2,
+      "mean_calibrated_margin": 0.7353197957858911,
+      "context_unresolved": 1
+    },
+    {
+      "target_level1": "Investments and Financial Instruments",
+      "prediction": "Reporting, Controls, Estimates and Audit Procedures",
+      "errors": 3,
+      "reports": 2,
+      "mean_calibrated_margin": 0.2561752665667741,
+      "context_unresolved": 0
+    },
+    {
+      "target_level1": "Related Parties and Significant Transactions",
+      "prediction": "Debt, Equity and Liabilities",
+      "errors": 3,
+      "reports": 1,
+      "mean_calibrated_margin": 0.2998748262182161,
+      "context_unresolved": 0
+    },
+    {
+      "target_level1": "Reporting, Controls, Estimates and Audit Procedures",
+      "prediction": "Cash and Other Assets",
+      "errors": 3,
+      "reports": 1,
+      "mean_calibrated_margin": 0.8110087353699251,
+      "context_unresolved": 0
+    },
+    {
+      "target_level1": "Reporting, Controls, Estimates and Audit Procedures",
+      "prediction": "Long-Lived and Intangible Assets",
+      "errors": 3,
+      "reports": 1,
+      "mean_calibrated_margin": 0.6686424236740954,
+      "context_unresolved": 2
+    },
+    {
+      "target_level1": "Business Combinations and Consolidation",
+      "prediction": "Long-Lived and Intangible Assets",
+      "errors": 2,
+      "reports": 1,
+      "mean_calibrated_margin": 0.6811134017211766,
+      "context_unresolved": 0
+    },
+    {
+      "target_level1": "Cash and Other Assets",
+      "prediction": "Debt, Equity and Liabilities",
+      "errors": 2,
+      "reports": 1,
+      "mean_calibrated_margin": 0.5166588250539403,
+      "context_unresolved": 0
+    },
+    {
+      "target_level1": "Credit, Loans, Deposits and Insurance",
+      "prediction": "Revenue and Receivables",
+      "errors": 2,
+      "reports": 1,
+      "mean_calibrated_margin": 0.6067889331042056,
+      "context_unresolved": 0
+    },
+    {
+      "target_level1": "Debt, Equity and Liabilities",
+      "prediction": "Cash and Other Assets",
+      "errors": 2,
+      "reports": 2,
+      "mean_calibrated_margin": 0.5917709140672498,
+      "context_unresolved": 0
+    },
+    {
+      "target_level1": "Inventory and Cost of Sales",
+      "prediction": "Revenue and Receivables",
+      "errors": 2,
+      "reports": 2,
+      "mean_calibrated_margin": 0.8545960430711814,
+      "context_unresolved": 0
+    },
+    {
+      "target_level1": "Investments and Financial Instruments",
+      "prediction": "Debt, Equity and Liabilities",
+      "errors": 2,
+      "reports": 2,
+      "mean_calibrated_margin": 0.7864204411774837,
+      "context_unresolved": 0
+    },
+    {
+      "target_level1": "Reporting, Controls, Estimates and Audit Procedures",
+      "prediction": "Revenue and Receivables",
+      "errors": 2,
+      "reports": 2,
+      "mean_calibrated_margin": 0.19809112615310137,
+      "context_unresolved": 0
+    },
+    {
+      "target_level1": "Revenue and Receivables",
+      "prediction": "Business Combinations and Consolidation",
+      "errors": 2,
+      "reports": 1,
+      "mean_calibrated_margin": 0.7951464853629555,
+      "context_unresolved": 0
+    }
+  ],
+  "report_rag_relative_to_sec_bert": [
+    {
+      "feature_present": "all",
+      "samples": 120,
+      "beneficial": 11,
+      "harmful": 22,
+      "both_correct": 70,
+      "both_wrong": 17,
+      "net": -11
+    },
+    {
+      "feature_present": "context_needs_context",
+      "samples": 29,
+      "beneficial": 1,
+      "harmful": 8,
+      "both_correct": 16,
+      "both_wrong": 4,
+      "net": -7
+    },
+    {
+      "feature_present": "context_unresolved",
+      "samples": 26,
+      "beneficial": 1,
+      "harmful": 5,
+      "both_correct": 16,
+      "both_wrong": 4,
+      "net": -4
+    },
+    {
+      "feature_present": "multi_topic",
+      "samples": 31,
+      "beneficial": 4,
+      "harmful": 4,
+      "both_correct": 17,
+      "both_wrong": 6,
+      "net": 0
+    },
+    {
+      "feature_present": "crosscut_hits_ge_2",
+      "samples": 22,
+      "beneficial": 2,
+      "harmful": 3,
+      "both_correct": 16,
+      "both_wrong": 1,
+      "net": -1
+    },
+    {
+      "feature_present": "tfidf_disagreement",
+      "samples": 45,
+      "beneficial": 5,
+      "harmful": 10,
+      "both_correct": 25,
+      "both_wrong": 5,
+      "net": -5
+    }
+  ],
+  "guardrail": "All associations are descriptive. Context and ambiguity flags are not expert-adjudicated ground truth."
+}

@@ -1,0 +1,36 @@
+{
+  "version": "v1",
+  "policy": "single-label findings; conservative alias merge; fixed top-12 plus Other",
+  "alias_map": {
+    "Business Combination": "Business Combinations"
+  },
+  "target_labels": [
+    "Revenue",
+    "Inventory",
+    "Business Combinations",
+    "Long-Lived Assets",
+    "Allowance for Loan Losses",
+    "Revenue and Related Accounts",
+    "Journal Entries",
+    "Accounts Receivable",
+    "Goodwill",
+    "Investment Securities",
+    "Certain Assets",
+    "Allowance for Credit Losses",
+    "Other"
+  ],
+  "split_proportions": {
+    "train": 0.60,
+    "validation": 0.15,
+    "calibration": 0.10,
+    "test": 0.15
+  },
+  "split_seed": 20260927,
+  "near_duplicate_threshold": 0.90,
+  "notes": [
+    "Revenue and Revenue and Related Accounts remain separate pending domain review.",
+    "Allowance for Loan Losses and Allowance for Credit Losses remain separate because usage differs over time.",
+    "Investments and Investment Securities remain separate pending hierarchical-taxonomy work."
+  ]
+}
+

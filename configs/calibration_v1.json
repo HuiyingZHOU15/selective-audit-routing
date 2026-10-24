@@ -1,0 +1,18 @@
+{
+  "dataset": "data/processed/model_dataset_v1.csv",
+  "models": {
+    "original": "artifacts/models/tfidf_lr_original_v1.joblib",
+    "masked": "artifacts/models/tfidf_lr_masked_v1.joblib"
+  },
+  "text_columns": {
+    "original": "text_original",
+    "masked": "text_masked"
+  },
+  "method": "sigmoid",
+  "escalation_budgets": [0.10, 0.20, 0.30],
+  "ece_bins": 15,
+  "bootstrap_iterations": 500,
+  "bootstrap_seed": 20260927,
+  "selection_rule": "route to LLM when calibrated maximum probability is below the calibration-set budget quantile"
+}
+

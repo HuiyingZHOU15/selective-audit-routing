@@ -1,0 +1,19 @@
+{
+  "version": "sec-bert-risk-router-v1-20261005",
+  "oof_predictions": "data/processed/sec_bert_oof_v1.csv",
+  "development_metadata": "data/processed/pcaob_development_oof_v1.csv",
+  "clean_only": true,
+  "random_seed": 20261005,
+  "logistic_c": 1.0,
+  "referral_budgets": [0.01, 0.03, 0.05, 0.10],
+  "coverage_targets": [0.99, 0.97, 0.95, 0.90],
+  "target_selective_accuracy": 0.95,
+  "risk_confidence_level": 0.95,
+  "bootstrap_replicates": 1000,
+  "random_replicates": 1000,
+  "notes": [
+    "All learned-router scores are report-grouped cross-fitted using the locked SEC-BERT outer folds.",
+    "The 5% target is evaluated as selective risk among auto-accepted samples, not oracle-assisted final accuracy.",
+    "Development operating points are exploratory; the final threshold must be selected on the locked calibration split."
+  ]
+}

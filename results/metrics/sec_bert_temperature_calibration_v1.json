@@ -1,0 +1,219 @@
+{
+  "version": "sec-bert-temperature-calibration-v1-20261013",
+  "samples": 608,
+  "reports": 65,
+  "temperature": 1.1989779352903378,
+  "optimization_success": true,
+  "calibration_metrics": [
+    {
+      "method": "raw",
+      "temperature": 1.0,
+      "accuracy": 0.9342105263157895,
+      "macro_f1": 0.91412642448778,
+      "nll": 0.29465022460702645,
+      "multiclass_brier": 0.11311982974496859,
+      "ece": 0.04442182356181608
+    },
+    {
+      "method": "temperature_scaled",
+      "temperature": 1.1989779352903378,
+      "accuracy": 0.9342105263157895,
+      "macro_f1": 0.91412642448778,
+      "nll": 0.2806295818093056,
+      "multiclass_brier": 0.10989650789739545,
+      "ece": 0.021499688192934203
+    }
+  ],
+  "frozen_thresholds": {
+    "calibrated_margin_5pct": {
+      "score": "calibrated_margin",
+      "operator": "refer_if_score_below",
+      "threshold": 0.5691283109492091,
+      "requested_referral_rate": 0.05,
+      "intended_referral_count": 30
+    },
+    "calibrated_margin_10pct": {
+      "score": "calibrated_margin",
+      "operator": "refer_if_score_below",
+      "threshold": 0.8602307794324395,
+      "requested_referral_rate": 0.1,
+      "intended_referral_count": 61
+    },
+    "calibrated_confidence_5pct": {
+      "score": "calibrated_confidence",
+      "operator": "refer_if_score_below",
+      "threshold": 0.7013083857073017,
+      "requested_referral_rate": 0.05,
+      "intended_referral_count": 30
+    },
+    "calibrated_confidence_10pct": {
+      "score": "calibrated_confidence",
+      "operator": "refer_if_score_below",
+      "threshold": 0.8914561072015583,
+      "requested_referral_rate": 0.1,
+      "intended_referral_count": 61
+    }
+  },
+  "operating_points": [
+    {
+      "samples": 608,
+      "referred": 30,
+      "referral_rate": 0.049342105263157895,
+      "coverage": 0.9506578947368421,
+      "selective_accuracy": 0.9515570934256056,
+      "selective_risk": 0.04844290657439446,
+      "sample_level_binomial_risk_upper_95": 0.0658166075495356,
+      "accepted_macro_f1": 0.936734273280527,
+      "errors_remaining": 28,
+      "errors_captured": 12,
+      "error_capture_rate": 0.3,
+      "referral_precision": 0.4,
+      "score": "calibrated_margin",
+      "requested_referral_rate": 0.05,
+      "threshold": 0.5691283109492091
+    },
+    {
+      "samples": 608,
+      "referred": 61,
+      "referral_rate": 0.10032894736842106,
+      "coverage": 0.899671052631579,
+      "selective_accuracy": 0.9707495429616088,
+      "selective_risk": 0.029250457038391225,
+      "sample_level_binomial_risk_upper_95": 0.04408861256029566,
+      "accepted_macro_f1": 0.9683689355481241,
+      "errors_remaining": 16,
+      "errors_captured": 24,
+      "error_capture_rate": 0.6,
+      "referral_precision": 0.39344262295081966,
+      "score": "calibrated_margin",
+      "requested_referral_rate": 0.1,
+      "threshold": 0.8602307794324395
+    },
+    {
+      "samples": 608,
+      "referred": 30,
+      "referral_rate": 0.049342105263157895,
+      "coverage": 0.9506578947368421,
+      "selective_accuracy": 0.9515570934256056,
+      "selective_risk": 0.04844290657439446,
+      "sample_level_binomial_risk_upper_95": 0.0658166075495356,
+      "accepted_macro_f1": 0.9377382413058384,
+      "errors_remaining": 28,
+      "errors_captured": 12,
+      "error_capture_rate": 0.3,
+      "referral_precision": 0.4,
+      "score": "calibrated_confidence",
+      "requested_referral_rate": 0.05,
+      "threshold": 0.7013083857073017
+    },
+    {
+      "samples": 608,
+      "referred": 61,
+      "referral_rate": 0.10032894736842106,
+      "coverage": 0.899671052631579,
+      "selective_accuracy": 0.9707495429616088,
+      "selective_risk": 0.029250457038391225,
+      "sample_level_binomial_risk_upper_95": 0.04408861256029566,
+      "accepted_macro_f1": 0.9683689355481241,
+      "errors_remaining": 16,
+      "errors_captured": 24,
+      "error_capture_rate": 0.6,
+      "referral_precision": 0.39344262295081966,
+      "score": "calibrated_confidence",
+      "requested_referral_rate": 0.1,
+      "threshold": 0.8914561072015583
+    }
+  ],
+  "report_cluster_bootstrap_95": {
+    "calibrated_margin_5pct": {
+      "coverage": [
+        0.9234505616609333,
+        0.9508196721311475,
+        0.9739152173913044
+      ],
+      "selective_accuracy": [
+        0.9175378735754406,
+        0.9525184124386252,
+        0.9784566393200463
+      ],
+      "error_capture_rate": [
+        0.15380434782608696,
+        0.3018867924528302,
+        0.5
+      ],
+      "referral_precision": [
+        0.25,
+        0.4,
+        0.5714285714285714
+      ]
+    },
+    "calibrated_margin_10pct": {
+      "coverage": [
+        0.8512677887935997,
+        0.8998160366033052,
+        0.9396231032041614
+      ],
+      "selective_accuracy": [
+        0.9486681985643207,
+        0.9710144927536232,
+        0.9883537913921672
+      ],
+      "error_capture_rate": [
+        0.39990566037735853,
+        0.6037735849056604,
+        0.7895042839657281
+      ],
+      "referral_precision": [
+        0.24417895632444694,
+        0.3888888888888889,
+        0.5625220070422534
+      ]
+    },
+    "calibrated_confidence_5pct": {
+      "coverage": [
+        0.9235126157456344,
+        0.9507800999177012,
+        0.9740652638378217
+      ],
+      "selective_accuracy": [
+        0.9174670117470365,
+        0.9526185262599117,
+        0.9784414998615539
+      ],
+      "error_capture_rate": [
+        0.15380434782608696,
+        0.3018867924528302,
+        0.5
+      ],
+      "referral_precision": [
+        0.26916666666666667,
+        0.4,
+        0.5555555555555556
+      ]
+    },
+    "calibrated_confidence_10pct": {
+      "coverage": [
+        0.8512677887935997,
+        0.8998160366033052,
+        0.9396231032041614
+      ],
+      "selective_accuracy": [
+        0.9486681985643207,
+        0.9710144927536232,
+        0.9883537913921672
+      ],
+      "error_capture_rate": [
+        0.39990566037735853,
+        0.6037735849056604,
+        0.7895042839657281
+      ],
+      "referral_precision": [
+        0.24417895632444694,
+        0.3888888888888889,
+        0.5625220070422534
+      ]
+    }
+  },
+  "protocol_guardrail": "Temperature is fit on the 608-sample calibration split. Margin was preselected on development OOF. Calibration selects only the 5% and 10% thresholds; retrospective test is not used.",
+  "claim_guardrail": "Calibration estimates and thresholds are not confirmatory test results. Risk-controlled wording requires unchanged evaluation on temporal holdout."
+}

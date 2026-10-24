@@ -1,0 +1,38 @@
+{
+  "version": "v1.2",
+  "provider": "deepseek",
+  "base_url": "https://api.deepseek.com",
+  "model": "deepseek-flash",
+  "api_key_env": "DEEPSEEK_API_KEY",
+  "dataset": "data/processed/model_dataset_v1.csv",
+  "routing_table": "results/tables/calibrated_test_predictions_v1.csv",
+  "taxonomy": "configs/taxonomy_v1.json",
+  "label_definitions": "configs/llm_label_definitions_v1.json",
+  "system_prompt": "prompts/deepseek_system_v1.txt",
+  "candidate_table": "data/interim/deepseek_candidates_v1.csv",
+  "response_log": "artifacts/llm_responses/deepseek_flash_v1.jsonl",
+  "audit_table": "results/tables/deepseek_routed_audit_v1.csv",
+  "metrics": "results/metrics/deepseek_reliability_metrics_v1.json",
+  "report": "results/reports/deepseek_reliability_summary_zh.md",
+  "route_column": "original_route_20pct",
+  "small_prediction_column": "original_prediction",
+  "small_confidence_column": "original_confidence",
+  "text_column": "text_original",
+  "prompt_seed": 20260927,
+  "temperature": 0.0,
+  "reasoning_effort": "none",
+  "max_output_tokens": 700,
+  "max_attempts": 3,
+  "request_timeout_seconds": 90,
+  "pricing_usd_per_million_tokens": {
+    "off_peak_input_cache_miss": 0.15,
+    "off_peak_output": 0.60,
+    "peak_input_cache_miss": 0.30,
+    "peak_output": 1.20
+  },
+  "notes": [
+    "The ground-truth label is retained for evaluation but never rendered into the model prompt.",
+    "Phase 1 is closed-book: standard_citation must be null because no authoritative-standard retrieval is supplied.",
+    "The label presentation order is deterministically shuffled per sample to measure order sensitivity later."
+  ]
+}

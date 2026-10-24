@@ -1,0 +1,31 @@
+target_level1,prediction,errors,reports,mean_calibrated_margin,context_unresolved
+Investments and Financial Instruments,Cash and Other Assets,6,2,0.9299870438045291,0
+Cash and Other Assets,Long-Lived and Intangible Assets,4,2,0.6139140407939557,2
+"Credit, Loans, Deposits and Insurance",Business Combinations and Consolidation,3,2,0.7353197957858911,1
+Investments and Financial Instruments,"Reporting, Controls, Estimates and Audit Procedures",3,2,0.2561752665667741,0
+Related Parties and Significant Transactions,"Debt, Equity and Liabilities",3,1,0.2998748262182161,0
+"Reporting, Controls, Estimates and Audit Procedures",Cash and Other Assets,3,1,0.8110087353699251,0
+"Reporting, Controls, Estimates and Audit Procedures",Long-Lived and Intangible Assets,3,1,0.6686424236740954,2
+Business Combinations and Consolidation,Long-Lived and Intangible Assets,2,1,0.6811134017211766,0
+Cash and Other Assets,"Debt, Equity and Liabilities",2,1,0.5166588250539403,0
+"Credit, Loans, Deposits and Insurance",Revenue and Receivables,2,1,0.6067889331042056,0
+"Debt, Equity and Liabilities",Cash and Other Assets,2,2,0.5917709140672498,0
+Inventory and Cost of Sales,Revenue and Receivables,2,2,0.8545960430711814,0
+Investments and Financial Instruments,"Debt, Equity and Liabilities",2,2,0.7864204411774837,0
+"Reporting, Controls, Estimates and Audit Procedures",Revenue and Receivables,2,2,0.19809112615310137,0
+Revenue and Receivables,Business Combinations and Consolidation,2,1,0.7951464853629555,0
+Revenue and Receivables,Cash and Other Assets,2,1,0.7157199390223282,0
+Revenue and Receivables,Related Parties and Significant Transactions,2,2,0.8728199670412129,0
+Revenue and Receivables,"Reporting, Controls, Estimates and Audit Procedures",2,2,0.42241254578811005,0
+Business Combinations and Consolidation,"Debt, Equity and Liabilities",1,1,0.9482423510529192,0
+Cash and Other Assets,Revenue and Receivables,1,1,0.353412522335688,0
+"Debt, Equity and Liabilities",Investments and Financial Instruments,1,1,0.3889068980570235,0
+"Debt, Equity and Liabilities","Reporting, Controls, Estimates and Audit Procedures",1,1,0.0536143872093871,0
+"Debt, Equity and Liabilities",Revenue and Receivables,1,1,0.3452608487838173,0
+"Expenses, Compensation and Benefits","Debt, Equity and Liabilities",1,1,0.663421577615907,0
+"Expenses, Compensation and Benefits",Revenue and Receivables,1,1,0.9666805301698989,0
+Investments and Financial Instruments,Long-Lived and Intangible Assets,1,1,0.8138720339791267,0
+Long-Lived and Intangible Assets,"Reporting, Controls, Estimates and Audit Procedures",1,1,0.5531923465699038,0
+Related Parties and Significant Transactions,Cash and Other Assets,1,1,0.6570320733309689,0
+"Reporting, Controls, Estimates and Audit Procedures",Related Parties and Significant Transactions,1,1,0.9425878333588732,0
+Revenue and Receivables,"Credit, Loans, Deposits and Insurance",1,1,0.8349940712283337,0

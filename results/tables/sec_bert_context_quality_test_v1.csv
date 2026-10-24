@@ -1,0 +1,4 @@
+context_group,raw_context_quality,samples,reports,accuracy,macro_f1_12class,mean_calibrated_margin,primary_referral_rate,primary_error_capture,safety_referral_rate,safety_error_capture,errors
+context_added,same_report_issuer_audit_area_preamble,60,13,0.9833333333333333,0.6560846560846562,0.9535230421954534,0.016666666666666666,1.0,0.03333333333333333,1.0,1
+context_unresolved,reference_without_available_preamble,132,45,0.9621212121212122,0.9539810384547227,0.9269462509510423,0.03787878787878788,0.4,0.09090909090909091,0.8,5
+original_sufficient,original_sufficient,698,93,0.9240687679083095,0.8786174781252455,0.9268179571429017,0.045845272206303724,0.3018867924528302,0.08882521489971347,0.660377358490566,53

@@ -1,0 +1,30 @@
+{
+  "version": "pcaob-crossfit-v1",
+  "dataset": "data/processed/model_dataset_v2.csv",
+  "near_duplicates": "results/tables/near_duplicate_report.csv",
+  "development_splits": ["train", "validation"],
+  "target": "target_level1",
+  "text_column": "text_context_v2",
+  "outer_folds": 5,
+  "inner_folds": 4,
+  "random_seed": 20261001,
+  "tfidf": {
+    "ngram_range": [1, 2],
+    "min_df": 2,
+    "max_df": 0.98,
+    "max_features": 50000,
+    "sublinear_tf": true
+  },
+  "classifier": {
+    "class_weight": "balanced",
+    "c_grid": [4.0, 16.0, 64.0, 256.0],
+    "max_iter": 3000
+  },
+  "calibration_method": "sigmoid",
+  "fold_group_policy": "report_id is the indivisible fold unit; cross-fold exact and audited near duplicates are flagged and excluded from clean OOF analyses because transitive template closure creates a 1,113-sample exact component and a 3,083-sample near component",
+  "primary_selection_metric": "macro_f1",
+  "oof_output": "data/processed/pcaob_development_oof_v1.csv",
+  "fold_manifest": "results/tables/pcaob_crossfit_fold_manifest_v1.csv",
+  "metrics_output": "results/metrics/pcaob_crossfit_oof_v1.json",
+  "report_output": "results/reports/pcaob_crossfit_oof_v1_zh.md"
+}

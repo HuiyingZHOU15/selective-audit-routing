@@ -1,0 +1,22 @@
+{
+  "dataset": "data/processed/model_dataset_v1.csv",
+  "text_variants": {
+    "original": "text_original",
+    "masked": "text_masked"
+  },
+  "c_values": [0.25, 1.0, 4.0],
+  "tfidf": {
+    "ngram_range": [1, 2],
+    "min_df": 2,
+    "max_df": 0.98,
+    "max_features": 60000,
+    "sublinear_tf": true
+  },
+  "logistic_regression": {
+    "class_weight": "balanced",
+    "max_iter": 3000,
+    "solver": "lbfgs"
+  },
+  "selection_metric": "validation_clean_macro_f1"
+}
+

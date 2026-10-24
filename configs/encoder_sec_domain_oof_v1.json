@@ -1,0 +1,19 @@
+{
+  "version": "encoder-sec-domain-oof-v1",
+  "dataset": "data/processed/pcaob_development_oof_v1.csv",
+  "rag_pilot": "data/interim/pcaob_rag_pilot_v1_audit.csv",
+  "model_name": "nlpaueb/sec-bert-base",
+  "text_column": "text_context_v2",
+  "target": "target_level1",
+  "fold_column": "outer_fold",
+  "seed": 20261002,
+  "max_length": 256,
+  "epochs": 3,
+  "learning_rate": 0.00002,
+  "batch_size": 4,
+  "gradient_accumulation": 4,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.1,
+  "gradient_clip_norm": 1.0,
+  "selection_rule": "fixed three epochs from the pre-specified baseline; outer holdouts never select epochs or hyperparameters"
+}

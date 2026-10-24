@@ -1,0 +1,11 @@
+{
+  "snapshot_file": "data/raw/pcaob_part_i_a_2026-09-27.csv",
+  "source_url": "https://pcaobus.org/docs/default-source/generated-reports/part-i-a-flat-file-%28csv%29.csv?download=true&sfvrsn=c59cce67_5",
+  "downloaded_at_utc": "2026-09-27T13:11:21Z",
+  "source_page": "https://pcaobus.org/oversight/inspections/firm-inspection-reports",
+  "near_duplicate_threshold": 0.9,
+  "minimum_class_size": 100,
+  "target_label_count_min": 5,
+  "target_label_count_max": 12
+}
+

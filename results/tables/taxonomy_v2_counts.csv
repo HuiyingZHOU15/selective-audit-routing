@@ -1,0 +1,49 @@
+split,target_level1,samples,clean_samples,reports
+calibration,Business Combinations and Consolidation,55,54,12
+calibration,Cash and Other Assets,19,19,7
+calibration,"Credit, Loans, Deposits and Insurance",33,31,8
+calibration,"Debt, Equity and Liabilities",43,42,13
+calibration,"Expenses, Compensation and Benefits",15,15,5
+calibration,Income Taxes,3,2,2
+calibration,Inventory and Cost of Sales,63,59,15
+calibration,Investments and Financial Instruments,17,17,9
+calibration,Long-Lived and Intangible Assets,92,90,24
+calibration,Related Parties and Significant Transactions,16,14,3
+calibration,"Reporting, Controls, Estimates and Audit Procedures",76,49,20
+calibration,Revenue and Receivables,234,216,43
+test,Business Combinations and Consolidation,80,76,17
+test,Cash and Other Assets,30,27,12
+test,"Credit, Loans, Deposits and Insurance",75,69,20
+test,"Debt, Equity and Liabilities",42,39,12
+test,"Expenses, Compensation and Benefits",18,18,8
+test,Income Taxes,9,8,3
+test,Inventory and Cost of Sales,87,79,27
+test,Investments and Financial Instruments,52,51,18
+test,Long-Lived and Intangible Assets,93,91,29
+test,Related Parties and Significant Transactions,23,21,7
+test,"Reporting, Controls, Estimates and Audit Procedures",106,92,37
+test,Revenue and Receivables,352,319,61
+train,Business Combinations and Consolidation,347,347,65
+train,Cash and Other Assets,144,144,46
+train,"Credit, Loans, Deposits and Insurance",316,316,58
+train,"Debt, Equity and Liabilities",233,233,74
+train,"Expenses, Compensation and Benefits",49,49,24
+train,Income Taxes,43,43,12
+train,Inventory and Cost of Sales,380,380,94
+train,Investments and Financial Instruments,226,226,70
+train,Long-Lived and Intangible Assets,497,497,125
+train,Related Parties and Significant Transactions,79,79,34
+train,"Reporting, Controls, Estimates and Audit Procedures",303,303,117
+train,Revenue and Receivables,1365,1365,249
+validation,Business Combinations and Consolidation,80,76,18
+validation,Cash and Other Assets,32,30,15
+validation,"Credit, Loans, Deposits and Insurance",95,88,16
+validation,"Debt, Equity and Liabilities",42,41,16
+validation,"Expenses, Compensation and Benefits",20,20,12
+validation,Income Taxes,11,11,6
+validation,Inventory and Cost of Sales,88,81,20
+validation,Investments and Financial Instruments,71,67,19
+validation,Long-Lived and Intangible Assets,91,89,24
+validation,Related Parties and Significant Transactions,38,38,10
+validation,"Reporting, Controls, Estimates and Audit Procedures",77,59,30
+validation,Revenue and Receivables,347,327,63

@@ -1,0 +1,31 @@
+{
+  "dataset_name": "PCAOB Selective Routing Dataset",
+  "version": "1.1.0",
+  "release_slug": "pcaob_selective_routing_v1",
+  "source_snapshot": "data/raw/pcaob_part_i_a_2026-09-27.csv",
+  "source_manifest": "data/snapshot_manifest.json",
+  "finding_table": "data/interim/findings.csv",
+  "model_table": "data/processed/model_dataset_v2.csv",
+  "taxonomy_config": "configs/taxonomy_v2.json",
+  "taxonomy_mapping": "results/tables/taxonomy_v2_mapping.csv",
+  "near_duplicate_table": "results/tables/near_duplicate_report.csv",
+  "small_model_id": "tfidf_lr_context_taxonomy_v2",
+  "llm_system_id": "typesafe_jev",
+  "llm_config": "configs/jev_core_v2.json",
+  "development_comparative_outcomes": "data/processed/pcaob_development_comparative_outcomes_v1.csv",
+  "group_split_column": "split",
+  "temporal_policy": {
+    "development_through_inspection_year": 2023,
+    "calibration_inspection_year": 2024,
+    "retrospective_test_from_inspection_year": 2025,
+    "confirmatory_rule": "Only report_id values absent from the 2026-09-27 source snapshot and first appearing in a later official PCAOB quarterly snapshot are eligible.",
+    "current_snapshot_status": "retrospective_only_not_confirmatory"
+  },
+  "routing_outcomes": {
+    "beneficial": "small model incorrect and LLM correct",
+    "harmful": "small model correct and LLM incorrect",
+    "neutral_both_correct": "both systems correct",
+    "neutral_both_wrong": "both systems incorrect",
+    "not_observed": "one or both systems were not run on this sample"
+  }
+}

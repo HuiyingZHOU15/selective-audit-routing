@@ -1,0 +1,18 @@
+{
+  "version": "sec-bert-calibration-export-v1-20261005",
+  "dataset": "data/processed/model_dataset_v2.csv",
+  "model_name": "nlpaueb/sec-bert-base",
+  "text_column": "text_context_v2",
+  "target": "target_level1",
+  "seed": 20261002,
+  "max_length": 256,
+  "epochs": 3,
+  "learning_rate": 0.00002,
+  "batch_size": 4,
+  "gradient_accumulation": 4,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.1,
+  "gradient_clip_norm": 1.0,
+  "selection": "best epoch by clean-validation macro-F1; calibration labels never select weights or hyperparameters",
+  "checkpoint_directory": "artifacts/models/sec_bert_calibration_export_v1"
+}

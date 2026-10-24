@@ -1,0 +1,18 @@
+{
+  "version": "pcaob-utility-router-v1",
+  "development_outcomes": "data/processed/pcaob_development_comparative_outcomes_v1.csv",
+  "model_dataset": "data/processed/model_dataset_v2.csv",
+  "raw_small_model": "artifacts/models/tfidf_lr_context_taxonomy_v2.joblib",
+  "calibration_candidates": "data/interim/jev_calibration_v2_candidates.csv",
+  "calibration_responses": "artifacts/llm_responses/jev_calibration_v2.jsonl",
+  "test_candidates": "data/interim/deepseek_core_v2_candidates.csv",
+  "test_responses": "artifacts/llm_responses/jev_core_v2.jsonl",
+  "maximum_jev_budget": 0.20,
+  "harm_penalty": 1.0,
+  "classifier_c": 0.5,
+  "random_seed": 20261001,
+  "bootstrap_iterations": 2000,
+  "threshold_quantiles": 101,
+  "selection_objective": "maximize calibration net corrections (beneficial minus harmful), then accuracy, macro-F1, then minimize calls",
+  "test_status": "retrospective_after_prior_inspection"
+}

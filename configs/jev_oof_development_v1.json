@@ -1,0 +1,14 @@
+{
+  "version": "jev-oof-development-v1",
+  "prompt_version": "jev-oof-pilot-v1",
+  "endpoint": "https://api.typesafe.ai/v1/systemone",
+  "model": "jev-latest",
+  "api_key_env": "TYPESAFE_API_KEY",
+  "candidate_table": "data/interim/jev_oof_development_v1_candidates.csv",
+  "response_log": "artifacts/llm_responses/jev_oof_pilot_v1.jsonl",
+  "label_definitions": "configs/llm_label_definitions_v2.json",
+  "request_timeout_seconds": 60,
+  "max_attempts": 3,
+  "population": "clean nested-OOF train plus validation samples",
+  "sampling_seed": 20261001
+}

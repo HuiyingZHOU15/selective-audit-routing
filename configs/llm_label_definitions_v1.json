@@ -1,0 +1,15 @@
+{
+  "Revenue": "The finding is principally about recognizing, measuring, presenting, or auditing revenue.",
+  "Inventory": "The finding is principally about inventory existence, valuation, costing, reserves, or related controls.",
+  "Business Combinations": "The finding concerns acquisition accounting, purchase price allocation, or assets and liabilities recognized in a business combination.",
+  "Long-Lived Assets": "The finding concerns property, equipment, intangible assets, impairment, useful lives, or other long-lived assets.",
+  "Allowance for Loan Losses": "The finding concerns the incurred-loss allowance for loan and lease losses or its audit, typically under the legacy model.",
+  "Revenue and Related Accounts": "The finding explicitly spans revenue together with linked balances or processes such as receivables, deferred revenue, or contract accounts.",
+  "Journal Entries": "The finding concerns journal-entry selection, testing, authorization, posting, or management override through journal entries.",
+  "Accounts Receivable": "The finding is principally about accounts receivable existence, confirmation, collectibility, valuation, or related controls.",
+  "Goodwill": "The finding is principally about goodwill recognition, reporting units, impairment testing, or related valuation assumptions.",
+  "Investment Securities": "The finding concerns debt or equity securities, classification, valuation, impairment, existence, or related disclosures.",
+  "Certain Assets": "Use only when the source itself describes a cross-cutting group of certain assets and no more specific listed class dominates.",
+  "Allowance for Credit Losses": "The finding concerns current expected credit losses (CECL), expected-credit-loss estimates, or the related allowance and audit.",
+  "Other": "Use when none of the named classes is a defensible principal topic."
+}
