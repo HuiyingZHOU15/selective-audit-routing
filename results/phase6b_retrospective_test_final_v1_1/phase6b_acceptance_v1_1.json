@@ -1,0 +1,36 @@
+{
+  "version": "phase6b-acceptance-v1.1",
+  "status": "phase6b_retrospective_test_accepted",
+  "evaluation_positioning": "retrospective_report_grouped_legacy_test_previously_inspected",
+  "test_previously_inspected": true,
+  "test_scored": true,
+  "calibration_loaded": false,
+  "clean_test_rows": 890,
+  "unique_test_reports": 95,
+  "official_runs_completed": 24,
+  "baseline_runs_completed": 6,
+  "conditions_reported": 8,
+  "prespecified_contrasts_reported": 5,
+  "bootstrap_replicates": 5000,
+  "statistical_unit": "inspection_report",
+  "official_manifest_files_verified": 48,
+  "baseline_manifest_files_verified": 12,
+  "phase6_freeze_sha256": "9d85ca2d05ee69f4b56b960740528f61b89931d37fcb13d499193ea07fb32d36",
+  "evaluator_sha256": "704899c63b0ed9331f64b91cbf5934185e2c41023d946ab8c13976551879c835",
+  "baseline_evaluator_sha256": "c1e5ca2e048e42cf7f63178ebb16e609bb93409acb355b53afba5cef27bd4118",
+  "aggregator_sha256": "940363d80170ecd29ea38ae33e9bbd9d2aa2ced3bcf6e5b8a74be93b6caf5791",
+  "failed_attempt_audit": {
+    "preserved": true,
+    "completed_run_outputs_before_environment_failure": 1,
+    "execution_summary_present": false,
+    "failure_class": "offline_model_loading_environment_retry",
+    "result_selection_or_tuning_performed": false
+  },
+  "selection_prohibitions_preserved": [
+    "no best-seed selection",
+    "no checkpoint or threshold changes after test scoring",
+    "no omission of failed or anomalous prespecified runs",
+    "no test-driven addition of comparisons"
+  ]
+}
+

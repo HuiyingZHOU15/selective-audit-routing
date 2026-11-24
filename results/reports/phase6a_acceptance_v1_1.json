@@ -1,0 +1,33 @@
+{
+  "version": "phase6a-acceptance-v1.1",
+  "status": "phase6a_accepted_test_gate_ready",
+  "test_scored": false,
+  "calibration_loaded": false,
+  "test_previously_inspected": true,
+  "official_validation_replays_completed": 24,
+  "baseline_validation_replays_completed": 6,
+  "validation_rows_per_run": 927,
+  "conditions_aggregated": 8,
+  "prespecified_contrasts_aggregated": 5,
+  "validation_bootstrap_replicates_for_acceptance": 200,
+  "test_bootstrap_replicates_frozen": 5000,
+  "phase6_freeze_sha256": "9d85ca2d05ee69f4b56b960740528f61b89931d37fcb13d499193ea07fb32d36",
+  "evaluator_sha256": "704899c63b0ed9331f64b91cbf5934185e2c41023d946ab8c13976551879c835",
+  "baseline_evaluator_sha256": "c1e5ca2e048e42cf7f63178ebb16e609bb93409acb355b53afba5cef27bd4118",
+  "aggregator_sha256": "940363d80170ecd29ea38ae33e9bbd9d2aa2ced3bcf6e5b8a74be93b6caf5791",
+  "archive": {
+    "server_path": "/home/zhy/selective-audit-routing-phase5/artifacts/phase6a_acceptance_bundle_v1_1.tar.gz",
+    "temporary_local_path": "C:/work/selective-audit-routing/artifacts/phase6a_acceptance_bundle_v1_1/phase6a_acceptance_bundle_v1_1.tar.gz",
+    "preferred_local_path_when_e_drive_is_mounted": "E:/selective-audit-routing/artifacts/phase6a_acceptance_bundle_v1_1/phase6a_acceptance_bundle_v1_1.tar.gz",
+    "sha256": "de4823ae9bdb3e572705e6f8b9fa60a2dff8d3e7d524ac9d3e5143b1329f7317",
+    "bytes": 1719287
+  },
+  "next_gate": "explicit --confirm-retrospective-test execution against the frozen 890-row clean test",
+  "prohibitions": [
+    "no best-seed selection",
+    "no checkpoint or threshold changes after test scoring",
+    "no omission of failed or anomalous prespecified runs",
+    "no test-driven addition of comparisons"
+  ]
+}
+

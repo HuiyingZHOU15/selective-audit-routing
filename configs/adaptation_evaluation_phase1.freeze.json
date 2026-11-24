@@ -1,0 +1,177 @@
+{
+  "version": "phase1-adaptation-evaluation-freeze-20261114",
+  "status": "frozen_for_implementation_before_new_phase1_runs",
+  "freeze_date": "2026-11-14",
+  "positioning": "controlled evaluation of parameter-efficient and full adaptation strategies for imbalanced PCAOB inspection-finding classification",
+  "evaluation_status": "retrospective_report_grouped_legacy_test_previously_inspected",
+  "data": {
+    "dataset": "data/processed/model_dataset_v2.csv",
+    "dataset_sha256": "f4d2083e680b6bda945a6044be8ebd9c73aa0545734603da15e37f5500ec3c92",
+    "raw_snapshot_sha256": "af543784fa73475741e20324ce451b1de1df96fe4a826fd292b1f9aa4b7c96d7",
+    "taxonomy_config_sha256": "8730b1d0d2b9465076bf622d8aba39ca36799f5bd21fc1e2019487d4b787d42a",
+    "taxonomy_mapping_sha256": "ff3b6611576f19896972fcc043a949d0badfb47f4e3bc684265128b21e93760d",
+    "input_column": "text_original",
+    "masked_input_column_to_build": "text_audit_area_masked_phase1",
+    "target": "target_level1",
+    "group": "report_id",
+    "train_rows": 3982,
+    "validation_clean_rows": 927,
+    "calibration_clean_rows": 608,
+    "test_clean_rows": 890,
+    "target_blind_invariants": [
+      "text_context_v2_equals_text_original",
+      "context_added_is_always_false",
+      "input_construction_does_not_read_audit_areas_target_level1_or_target_level2"
+    ]
+  },
+  "frequency_tiers_from_train_only": {
+    "rule": "descending training count split into three groups of four classes",
+    "high": [
+      "Revenue and Receivables",
+      "Long-Lived and Intangible Assets",
+      "Inventory and Cost of Sales",
+      "Business Combinations and Consolidation"
+    ],
+    "medium": [
+      "Credit, Loans, Deposits and Insurance",
+      "Reporting, Controls, Estimates and Audit Procedures",
+      "Debt, Equity and Liabilities",
+      "Investments and Financial Instruments"
+    ],
+    "low": [
+      "Cash and Other Assets",
+      "Related Parties and Significant Transactions",
+      "Expenses, Compensation and Benefits",
+      "Income Taxes"
+    ]
+  },
+  "models": {
+    "sec_bert": {
+      "model_id": "nlpaueb/sec-bert-base",
+      "revision": "d511591f5e74052afdab08f1f14c4ff2a1e55749"
+    },
+    "general_bert": {
+      "model_id": "google-bert/bert-base-uncased",
+      "revision": "86b5e0934494bd15c9632b12f734a8a67f723594"
+    },
+    "minilm": {
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "role": "frozen_positioning_baseline"
+    }
+  },
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": ["query", "key", "value", "dense"],
+    "modules_to_save": ["classifier"]
+  },
+  "common_training": {
+    "max_length": 256,
+    "max_epochs": 6,
+    "effective_batch_size": 16,
+    "preferred_physical_batch_size": 2,
+    "gradient_accumulation": 8,
+    "optimizer": "AdamW",
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "max_gradient_norm": 1.0,
+    "fp16": true,
+    "selection_metric": "clean_validation_macro_f1",
+    "early_stopping_patience_epochs": 2,
+    "early_stopping_min_delta": 0.0001,
+    "tie_break": "earliest_epoch",
+    "official_seeds": [20261114, 20261115, 20261116]
+  },
+  "learning_rate_pilot": {
+    "seed": 20261113,
+    "text_condition": "original",
+    "loss": "weighted",
+    "test_scoring_prohibited": true,
+    "candidate_rates": {
+      "sec_lora": [0.00005, 0.0001, 0.0002],
+      "sec_full": [0.00001, 0.00002, 0.00003],
+      "bert_full": [0.00001, 0.00002, 0.00003]
+    },
+    "selection": "highest_best_epoch_validation_macro_f1",
+    "tie_within": 0.0001,
+    "tie_break": "lower_learning_rate",
+    "reuse_selected_rate_across_loss_and_text_conditions": true
+  },
+  "lexical_cues": {
+    "phrase_source": "frozen_global_taxonomy_mapping",
+    "target_conditioned_masking_prohibited": true,
+    "primary_mask": "audit_area_phrases_only",
+    "preserve_auditing_standard_references": true,
+    "natural_cue_absent_definition": "no global audit-area phrase occurs after masker normalization",
+    "matched_masking": true,
+    "input_shift_stress_test_reported_separately": true
+  },
+  "official_gpu_matrix": [
+    {"method": "sec_lora", "text": "original", "loss": "weighted", "seeds": 3},
+    {"method": "sec_lora", "text": "original", "loss": "unweighted", "seeds": 3},
+    {"method": "sec_full", "text": "original", "loss": "weighted", "seeds": 3},
+    {"method": "sec_full", "text": "original", "loss": "unweighted", "seeds": 3},
+    {"method": "bert_full", "text": "original", "loss": "weighted", "seeds": 3},
+    {"method": "sec_lora", "text": "masked", "loss": "weighted", "seeds": 3},
+    {"method": "sec_full", "text": "masked", "loss": "weighted", "seeds": 3},
+    {"method": "bert_full", "text": "masked", "loss": "weighted", "seeds": 3}
+  ],
+  "deterministic_matrix": [
+    {"method": "tfidf_balanced_lr", "text": "original"},
+    {"method": "tfidf_balanced_lr", "text": "masked"},
+    {"method": "frozen_minilm_balanced_lr", "text": "original"},
+    {"method": "frozen_minilm_balanced_lr", "text": "masked"},
+    {"method": "frozen_sec_bert_balanced_lr", "text": "original"},
+    {"method": "frozen_sec_bert_balanced_lr", "text": "masked"}
+  ],
+  "primary_metric": "macro_f1",
+  "secondary_metrics": [
+    "accuracy",
+    "balanced_accuracy",
+    "per_class_precision",
+    "per_class_recall",
+    "per_class_f1",
+    "tier_macro_f1",
+    "tier_macro_recall",
+    "trainable_parameters",
+    "total_parameters",
+    "peak_cuda_memory_gb",
+    "training_time_seconds",
+    "inference_examples_per_second"
+  ],
+  "prespecified_contrasts": [
+    "sec_lora_weighted_vs_sec_full_weighted_original_primary",
+    "sec_lora_weighted_vs_unweighted_original",
+    "sec_full_weighted_vs_unweighted_original",
+    "sec_full_vs_bert_full_weighted_original",
+    "sec_lora_vs_sec_full_weighted_matched_masked"
+  ],
+  "statistical_unit": "inspection_report",
+  "uncertainty": {
+    "report_cluster_bootstrap_replicates": 5000,
+    "hierarchical_seed_report_bootstrap_replicates": 5000,
+    "seed_results_reported_individually": true,
+    "report_mean_sd_and_worst_seed": true,
+    "best_seed_reporting_prohibited": true
+  },
+  "cost_measurement": {
+    "training_time_excludes_download_and_environment_setup": true,
+    "inference_batch_size": 8,
+    "inference_warmup_passes": 1,
+    "inference_timed_passes": 3,
+    "inference_summary": "median_examples_per_second",
+    "same_gpu_class_required": true
+  },
+  "secondary_selective_prediction": {
+    "enabled_after_main_analysis": true,
+    "learned_router": false,
+    "temperature_fit_partition": "calibration",
+    "score": "top_two_margin",
+    "descriptive_abstention_rates": [0.05, 0.1],
+    "pareto_selection": "within_0.01_mean_macro_f1_then_fewest_trainable_parameters_then_lower_median_training_time"
+  },
+  "run_schedule": "configs/adaptation_evaluation_phase1_runs.csv"
+}
+
+

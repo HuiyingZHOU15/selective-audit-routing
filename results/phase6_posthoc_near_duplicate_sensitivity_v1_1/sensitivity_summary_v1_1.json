@@ -1,0 +1,31 @@
+{
+  "version": "phase6-posthoc-near-duplicate-sensitivity-v1.1",
+  "status": "diagnostic_after_retrospective_test_access",
+  "confirmatory_claim": false,
+  "retraining_performed": false,
+  "checkpoint_or_threshold_changed": false,
+  "validation_rows_original": 927,
+  "validation_rows_excluded": 44,
+  "validation_rows_remaining": 883,
+  "test_rows_original": 890,
+  "test_rows_excluded": 27,
+  "test_rows_remaining": 863,
+  "test_reports_remaining": 94,
+  "phase4a_original_selected": "LORA_QKVO_R16",
+  "phase4a_filtered_selected_using_saved_best_checkpoints": "LORA_QKVO_R16",
+  "phase4a_selection_changed": false,
+  "phase4a_filtered_efficiency_set": [
+    "LORA_QKVO_R16"
+  ],
+  "phase4b_filtered_selected_learning_rates": {
+    "bert_full": 3e-05,
+    "sec_full": 2e-05,
+    "sec_lora": 0.0002
+  },
+  "epoch_selection_recheck_possible_from_saved_artifacts": false,
+  "epoch_selection_limitation": "Only the previously selected best-checkpoint predictions were saved; per-epoch predictions are unavailable, so the best epoch cannot be reselected after filtering.",
+  "bootstrap_replicates": 5000,
+  "bootstrap_unit": "inspection_report",
+  "multiplicity_adjustment": "none; intervals remain descriptive and unadjusted"
+}
+

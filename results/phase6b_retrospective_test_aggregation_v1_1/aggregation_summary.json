@@ -1,0 +1,11 @@
+{
+  "status": "phase6_aggregation_complete",
+  "partition": "test",
+  "runs": 24,
+  "conditions": 8,
+  "contrasts": 5,
+  "bootstrap_replicates": 5000,
+  "statistical_unit": "inspection_report",
+  "test_previously_inspected": true
+}
+

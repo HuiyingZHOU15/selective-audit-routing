@@ -1,0 +1,1054 @@
+{
+  "version": "phase6-retrospective-evaluation-freeze-v1.1",
+  "status": "phase6a_rules_frozen_test_gate_closed",
+  "evaluation_positioning": "retrospective_report_grouped_legacy_test_previously_inspected",
+  "phase5_acceptance_sha256": "fa2d432f63c7f61235b44477795dde1a93ad076e02d75fbe91fc132477ec09e7",
+  "official_config_manifest_sha256": "7dd40e18e991bf67bdab81ecc5d1f59928a98178b0f6fcc5f17f017c94c1aa20",
+  "design_freeze_sha256": "8845cd62ed830d0395df9709f0b2373a35c3b4f9a99b21dd85e3c291eb42eb4c",
+  "expected_official_runs": 24,
+  "expected_conditions": 8,
+  "official_seeds": [
+    20261114,
+    20261115,
+    20261116
+  ],
+  "test_gate": {
+    "closed": true,
+    "required_flag": "--confirm-retrospective-test",
+    "required_phase6a_acceptance_status": "phase6a_accepted_test_gate_ready",
+    "test_previously_inspected": true,
+    "clean_test_rows": 890,
+    "dataset_sha256": "f4d2083e680b6bda945a6044be8ebd9c73aa0545734603da15e37f5500ec3c92"
+  },
+  "development_dry_run": {
+    "physical_train_validation_only_table_required": true,
+    "development_sha256": "da444da18a72624467b4ac266c8c9564191629da177de301df76230c7d151a62",
+    "masked_development_sha256": "fe7a0d5ce36271379154ef81b9746a647fffc3453cb4f4e6a6bd83c5fa7f4047",
+    "clean_validation_rows": 927
+  },
+  "primary_metric": "macro_f1",
+  "secondary_metrics": [
+    "accuracy",
+    "balanced_accuracy",
+    "weighted_f1",
+    "per_class_f1",
+    "tier_macro_f1"
+  ],
+  "frequency_tiers_from_train_only": {
+    "rule": "descending training count split into three groups of four classes",
+    "high": [
+      "Revenue and Receivables",
+      "Long-Lived and Intangible Assets",
+      "Inventory and Cost of Sales",
+      "Business Combinations and Consolidation"
+    ],
+    "medium": [
+      "Credit, Loans, Deposits and Insurance",
+      "Reporting, Controls, Estimates and Audit Procedures",
+      "Debt, Equity and Liabilities",
+      "Investments and Financial Instruments"
+    ],
+    "low": [
+      "Cash and Other Assets",
+      "Related Parties and Significant Transactions",
+      "Expenses, Compensation and Benefits",
+      "Income Taxes"
+    ]
+  },
+  "prespecified_contrasts": [
+    "sec_lora_weighted_vs_sec_full_weighted_original_primary",
+    "sec_lora_weighted_vs_unweighted_original",
+    "sec_full_weighted_vs_unweighted_original",
+    "sec_full_vs_bert_full_weighted_original",
+    "sec_lora_vs_sec_full_weighted_matched_masked"
+  ],
+  "uncertainty": {
+    "statistical_unit": "inspection_report",
+    "report_cluster_bootstrap_replicates": 5000,
+    "hierarchical_seed_report_bootstrap_replicates": 5000,
+    "paired_contrasts_share_seed_and_report_resamples": true,
+    "seed_results_reported_individually": true,
+    "report_mean_sd_and_worst_seed": true,
+    "best_seed_reporting_prohibited": true,
+    "three_seed_inference_is_descriptive": true
+  },
+  "cost_measurement": {
+    "training_time_excludes_download_and_environment_setup": true,
+    "inference_batch_size": 8,
+    "inference_warmup_passes": 1,
+    "inference_timed_passes": 3,
+    "inference_summary": "median_examples_per_second",
+    "same_gpu_class_required": true
+  },
+  "selection_prohibitions": [
+    "no best-seed selection",
+    "no checkpoint or threshold changes after test scoring",
+    "no omission of failed or anomalous prespecified runs",
+    "no test-driven addition of comparisons"
+  ],
+  "matched_masking": {
+    "official_masked_models_use_masked_inputs": true,
+    "original_models_use_original_inputs": true,
+    "original_to_masked_input_shift_is_separate_and_not_a_matched-training_comparison": true
+  },
+  "runs": [
+    {
+      "order": 14,
+      "run_id": "phase5__014__s20261114__sec_full__masked__weighted",
+      "condition_id": "C06_SEC_FULL_MASKED_WEIGHTED",
+      "seed": 20261114,
+      "method": "sec_full",
+      "text_condition": "masked",
+      "loss": "weighted",
+      "config_canonical_sha256": "92dc9d7b6ada485b57fc1c6cf69e670a37f49d1e3472c5eaf6ec7cf674184366",
+      "run_relative_path": "outputs/seed_20261114/phase5__014__s20261114__sec_full__masked__weighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 26,
+          "sha256": "d4c3a0114798d8c46dbb7f3dd329ac6bc70de88bf47330f4c1b60183c972bdaf"
+        },
+        {
+          "path": "checkpoint/config.json",
+          "bytes": 1870,
+          "sha256": "b24eddc0597d08dcc04b6bbc3341320915ff07faac51eca3b99b52f7b7c61623"
+        },
+        {
+          "path": "checkpoint/model.safetensors",
+          "bytes": 436385816,
+          "sha256": "5995346f3eb66956b554f5425140a9eec609c1d42b22ba67f29156b54071d033"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 693225,
+          "sha256": "adb3295f9f96624980df6da162077c2a7282c62876a135a59df002902535c92d"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 378,
+          "sha256": "c457e9930ee46e2615a775a0024bd30e19f1e33462ae83c776bf7cf05ed79e55"
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "run_id": "phase5__015__s20261114__sec_lora__original__weighted",
+      "condition_id": "C01_SEC_LORA_ORIGINAL_WEIGHTED",
+      "seed": 20261114,
+      "method": "sec_lora",
+      "text_condition": "original",
+      "loss": "weighted",
+      "config_canonical_sha256": "cbecc4df00244bd4240f67d76abd78e00cb98a789d1b62dae20638fc4b51c128",
+      "run_relative_path": "outputs/seed_20261114/phase5__015__s20261114__sec_lora__original__weighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/README.md",
+          "bytes": 5166,
+          "sha256": "abacbe04762406ac585646bbd06079fcb4c5b441887d09e4fb015bd096fae93d"
+        },
+        {
+          "path": "checkpoint/adapter_config.json",
+          "bytes": 1061,
+          "sha256": "c12b6deb3c36795cb036a9dcf683a1980c7a92eaef0a108849efc68abc78ce74"
+        },
+        {
+          "path": "checkpoint/adapter_model.safetensors",
+          "bytes": 4769248,
+          "sha256": "28ac07729a52f0515cd5c084cc5ffbfb9bb4c65d4b5f766295da71f770945b32"
+        },
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 28,
+          "sha256": "a40f34fa3d3fdc6878b62ab6a8b1416b01dc5fa2eedbbe70a75c519cbdf7854b"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 693225,
+          "sha256": "adb3295f9f96624980df6da162077c2a7282c62876a135a59df002902535c92d"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 378,
+          "sha256": "c457e9930ee46e2615a775a0024bd30e19f1e33462ae83c776bf7cf05ed79e55"
+        }
+      ]
+    },
+    {
+      "order": 16,
+      "run_id": "phase5__016__s20261114__sec_full__original__weighted",
+      "condition_id": "C04_SEC_FULL_ORIGINAL_WEIGHTED",
+      "seed": 20261114,
+      "method": "sec_full",
+      "text_condition": "original",
+      "loss": "weighted",
+      "config_canonical_sha256": "f1759c19c48c1383c2e6414b4b7cd8f242fdfaa00692558e453da8a04cf306b2",
+      "run_relative_path": "outputs/seed_20261114/phase5__016__s20261114__sec_full__original__weighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 26,
+          "sha256": "d4c3a0114798d8c46dbb7f3dd329ac6bc70de88bf47330f4c1b60183c972bdaf"
+        },
+        {
+          "path": "checkpoint/config.json",
+          "bytes": 1870,
+          "sha256": "b24eddc0597d08dcc04b6bbc3341320915ff07faac51eca3b99b52f7b7c61623"
+        },
+        {
+          "path": "checkpoint/model.safetensors",
+          "bytes": 436385816,
+          "sha256": "5c68536098a68d0d34360f5362790da4e793fbb238985452f9fc8c4b01f912d6"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 693225,
+          "sha256": "adb3295f9f96624980df6da162077c2a7282c62876a135a59df002902535c92d"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 378,
+          "sha256": "c457e9930ee46e2615a775a0024bd30e19f1e33462ae83c776bf7cf05ed79e55"
+        }
+      ]
+    },
+    {
+      "order": 17,
+      "run_id": "phase5__017__s20261114__sec_full__original__unweighted",
+      "condition_id": "C05_SEC_FULL_ORIGINAL_UNWEIGHTED",
+      "seed": 20261114,
+      "method": "sec_full",
+      "text_condition": "original",
+      "loss": "unweighted",
+      "config_canonical_sha256": "80200369c5a012a4e6bb981e9c769cf186e2dc566a12c1ce0227fcabe27504f7",
+      "run_relative_path": "outputs/seed_20261114/phase5__017__s20261114__sec_full__original__unweighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 26,
+          "sha256": "d4c3a0114798d8c46dbb7f3dd329ac6bc70de88bf47330f4c1b60183c972bdaf"
+        },
+        {
+          "path": "checkpoint/config.json",
+          "bytes": 1870,
+          "sha256": "b24eddc0597d08dcc04b6bbc3341320915ff07faac51eca3b99b52f7b7c61623"
+        },
+        {
+          "path": "checkpoint/model.safetensors",
+          "bytes": 436385816,
+          "sha256": "f2e0bb6ce94286e96c647c7cd6252daa5bbbad2fa981ee8662029cf162de7a54"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 693225,
+          "sha256": "adb3295f9f96624980df6da162077c2a7282c62876a135a59df002902535c92d"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 378,
+          "sha256": "c457e9930ee46e2615a775a0024bd30e19f1e33462ae83c776bf7cf05ed79e55"
+        }
+      ]
+    },
+    {
+      "order": 18,
+      "run_id": "phase5__018__s20261114__sec_lora__masked__weighted",
+      "condition_id": "C03_SEC_LORA_MASKED_WEIGHTED",
+      "seed": 20261114,
+      "method": "sec_lora",
+      "text_condition": "masked",
+      "loss": "weighted",
+      "config_canonical_sha256": "c2b2c81ff91936c4d3cdbfb14c70081ced4e55c94ff0e6a74d6f9c5813b8fa65",
+      "run_relative_path": "outputs/seed_20261114/phase5__018__s20261114__sec_lora__masked__weighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/README.md",
+          "bytes": 5166,
+          "sha256": "abacbe04762406ac585646bbd06079fcb4c5b441887d09e4fb015bd096fae93d"
+        },
+        {
+          "path": "checkpoint/adapter_config.json",
+          "bytes": 1061,
+          "sha256": "c12b6deb3c36795cb036a9dcf683a1980c7a92eaef0a108849efc68abc78ce74"
+        },
+        {
+          "path": "checkpoint/adapter_model.safetensors",
+          "bytes": 4769248,
+          "sha256": "29562994d763f9e7167440ed05e2aca55ec961813cc589ecebb7e80841a4969f"
+        },
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 28,
+          "sha256": "a40f34fa3d3fdc6878b62ab6a8b1416b01dc5fa2eedbbe70a75c519cbdf7854b"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 693225,
+          "sha256": "adb3295f9f96624980df6da162077c2a7282c62876a135a59df002902535c92d"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 378,
+          "sha256": "c457e9930ee46e2615a775a0024bd30e19f1e33462ae83c776bf7cf05ed79e55"
+        }
+      ]
+    },
+    {
+      "order": 19,
+      "run_id": "phase5__019__s20261114__bert_full__original__weighted",
+      "condition_id": "C07_BERT_FULL_ORIGINAL_WEIGHTED",
+      "seed": 20261114,
+      "method": "bert_full",
+      "text_condition": "original",
+      "loss": "weighted",
+      "config_canonical_sha256": "1da46392b1819ecbb37164e72584e0b38ce08d3902fd6a3fd61d412d80b43f6c",
+      "run_relative_path": "outputs/seed_20261114/phase5__019__s20261114__bert_full__original__weighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 26,
+          "sha256": "d4c3a0114798d8c46dbb7f3dd329ac6bc70de88bf47330f4c1b60183c972bdaf"
+        },
+        {
+          "path": "checkpoint/config.json",
+          "bytes": 1870,
+          "sha256": "661947ea9ff89c98c740345299ec15967b26bd3c6a4f8962bb506f7bf9b6079a"
+        },
+        {
+          "path": "checkpoint/model.safetensors",
+          "bytes": 437989384,
+          "sha256": "9128ae8539da4c6a692c40fc8a34f7de7d22a761b9050cec029d8089d54937e0"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 711649,
+          "sha256": "851ca67100d372ca3ae031a6abd168f53489eebfd7d89523f35c5c9b4d372c3c"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 350,
+          "sha256": "8b54ad532ba293be69643d90fbdaa7f440e593d7f1798f83d750adaa9a1cd934"
+        }
+      ]
+    },
+    {
+      "order": 20,
+      "run_id": "phase5__020__s20261114__bert_full__masked__weighted",
+      "condition_id": "C08_BERT_FULL_MASKED_WEIGHTED",
+      "seed": 20261114,
+      "method": "bert_full",
+      "text_condition": "masked",
+      "loss": "weighted",
+      "config_canonical_sha256": "248e750e9580ef82bd03ad7c6f26cc33cda13696651b8aaf15a19334c5d2a7f7",
+      "run_relative_path": "outputs/seed_20261114/phase5__020__s20261114__bert_full__masked__weighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 26,
+          "sha256": "d4c3a0114798d8c46dbb7f3dd329ac6bc70de88bf47330f4c1b60183c972bdaf"
+        },
+        {
+          "path": "checkpoint/config.json",
+          "bytes": 1870,
+          "sha256": "661947ea9ff89c98c740345299ec15967b26bd3c6a4f8962bb506f7bf9b6079a"
+        },
+        {
+          "path": "checkpoint/model.safetensors",
+          "bytes": 437989384,
+          "sha256": "11d3506e4b99e90845ecef9490fb94a188d8c0babfe405ff4f517b14c15fcfd7"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 711649,
+          "sha256": "851ca67100d372ca3ae031a6abd168f53489eebfd7d89523f35c5c9b4d372c3c"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 350,
+          "sha256": "8b54ad532ba293be69643d90fbdaa7f440e593d7f1798f83d750adaa9a1cd934"
+        }
+      ]
+    },
+    {
+      "order": 21,
+      "run_id": "phase5__021__s20261114__sec_lora__original__unweighted",
+      "condition_id": "C02_SEC_LORA_ORIGINAL_UNWEIGHTED",
+      "seed": 20261114,
+      "method": "sec_lora",
+      "text_condition": "original",
+      "loss": "unweighted",
+      "config_canonical_sha256": "06470ff7a6abb7745d480d021969ff53ebea941026605048193db3683182e3c7",
+      "run_relative_path": "outputs/seed_20261114/phase5__021__s20261114__sec_lora__original__unweighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/README.md",
+          "bytes": 5166,
+          "sha256": "abacbe04762406ac585646bbd06079fcb4c5b441887d09e4fb015bd096fae93d"
+        },
+        {
+          "path": "checkpoint/adapter_config.json",
+          "bytes": 1061,
+          "sha256": "c12b6deb3c36795cb036a9dcf683a1980c7a92eaef0a108849efc68abc78ce74"
+        },
+        {
+          "path": "checkpoint/adapter_model.safetensors",
+          "bytes": 4769248,
+          "sha256": "f0060fe7e1b6bf6ce705ef50f90d908005d5f9fa8fdaa7f7ad28ed7df21053ff"
+        },
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 28,
+          "sha256": "a40f34fa3d3fdc6878b62ab6a8b1416b01dc5fa2eedbbe70a75c519cbdf7854b"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 693225,
+          "sha256": "adb3295f9f96624980df6da162077c2a7282c62876a135a59df002902535c92d"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 378,
+          "sha256": "c457e9930ee46e2615a775a0024bd30e19f1e33462ae83c776bf7cf05ed79e55"
+        }
+      ]
+    },
+    {
+      "order": 22,
+      "run_id": "phase5__022__s20261115__bert_full__original__weighted",
+      "condition_id": "C07_BERT_FULL_ORIGINAL_WEIGHTED",
+      "seed": 20261115,
+      "method": "bert_full",
+      "text_condition": "original",
+      "loss": "weighted",
+      "config_canonical_sha256": "e9525ff9395dbde14240949bb60512508f33e57501aa5b94d7a40c5a757c4625",
+      "run_relative_path": "outputs/seed_20261115/phase5__022__s20261115__bert_full__original__weighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 26,
+          "sha256": "d4c3a0114798d8c46dbb7f3dd329ac6bc70de88bf47330f4c1b60183c972bdaf"
+        },
+        {
+          "path": "checkpoint/config.json",
+          "bytes": 1870,
+          "sha256": "661947ea9ff89c98c740345299ec15967b26bd3c6a4f8962bb506f7bf9b6079a"
+        },
+        {
+          "path": "checkpoint/model.safetensors",
+          "bytes": 437989384,
+          "sha256": "eb40fc161061b52460a350d9504d3e3a06d279b2132589f55991f37d2aba1738"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 711649,
+          "sha256": "851ca67100d372ca3ae031a6abd168f53489eebfd7d89523f35c5c9b4d372c3c"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 350,
+          "sha256": "8b54ad532ba293be69643d90fbdaa7f440e593d7f1798f83d750adaa9a1cd934"
+        }
+      ]
+    },
+    {
+      "order": 23,
+      "run_id": "phase5__023__s20261115__sec_full__masked__weighted",
+      "condition_id": "C06_SEC_FULL_MASKED_WEIGHTED",
+      "seed": 20261115,
+      "method": "sec_full",
+      "text_condition": "masked",
+      "loss": "weighted",
+      "config_canonical_sha256": "45b5883ed0594bf44a1faed7348caca5a2be9e832a193ad158c96db9aff44593",
+      "run_relative_path": "outputs/seed_20261115/phase5__023__s20261115__sec_full__masked__weighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 26,
+          "sha256": "d4c3a0114798d8c46dbb7f3dd329ac6bc70de88bf47330f4c1b60183c972bdaf"
+        },
+        {
+          "path": "checkpoint/config.json",
+          "bytes": 1870,
+          "sha256": "b24eddc0597d08dcc04b6bbc3341320915ff07faac51eca3b99b52f7b7c61623"
+        },
+        {
+          "path": "checkpoint/model.safetensors",
+          "bytes": 436385816,
+          "sha256": "c846dff54e6161eb32683024090a83f67d22f59b8ffb86322805e16012a93c90"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 693225,
+          "sha256": "adb3295f9f96624980df6da162077c2a7282c62876a135a59df002902535c92d"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 378,
+          "sha256": "c457e9930ee46e2615a775a0024bd30e19f1e33462ae83c776bf7cf05ed79e55"
+        }
+      ]
+    },
+    {
+      "order": 24,
+      "run_id": "phase5__024__s20261115__sec_full__original__weighted",
+      "condition_id": "C04_SEC_FULL_ORIGINAL_WEIGHTED",
+      "seed": 20261115,
+      "method": "sec_full",
+      "text_condition": "original",
+      "loss": "weighted",
+      "config_canonical_sha256": "16634f5a522acf77e763274aeedf39e93393f74563b6e76a13c4ba63b929c99b",
+      "run_relative_path": "outputs/seed_20261115/phase5__024__s20261115__sec_full__original__weighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 26,
+          "sha256": "d4c3a0114798d8c46dbb7f3dd329ac6bc70de88bf47330f4c1b60183c972bdaf"
+        },
+        {
+          "path": "checkpoint/config.json",
+          "bytes": 1870,
+          "sha256": "b24eddc0597d08dcc04b6bbc3341320915ff07faac51eca3b99b52f7b7c61623"
+        },
+        {
+          "path": "checkpoint/model.safetensors",
+          "bytes": 436385816,
+          "sha256": "8a32662e5eaf81dd0d61177770b86a4484dace60925638d9a962ffa87a4ba8d4"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 693225,
+          "sha256": "adb3295f9f96624980df6da162077c2a7282c62876a135a59df002902535c92d"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 378,
+          "sha256": "c457e9930ee46e2615a775a0024bd30e19f1e33462ae83c776bf7cf05ed79e55"
+        }
+      ]
+    },
+    {
+      "order": 25,
+      "run_id": "phase5__025__s20261115__sec_lora__masked__weighted",
+      "condition_id": "C03_SEC_LORA_MASKED_WEIGHTED",
+      "seed": 20261115,
+      "method": "sec_lora",
+      "text_condition": "masked",
+      "loss": "weighted",
+      "config_canonical_sha256": "f449ec5a080fed02200f1e02e1346bf95d556ddb5b13fc8e7994f22f77665ff3",
+      "run_relative_path": "outputs/seed_20261115/phase5__025__s20261115__sec_lora__masked__weighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/README.md",
+          "bytes": 5166,
+          "sha256": "abacbe04762406ac585646bbd06079fcb4c5b441887d09e4fb015bd096fae93d"
+        },
+        {
+          "path": "checkpoint/adapter_config.json",
+          "bytes": 1061,
+          "sha256": "2867643f749f2c535a11621b6381506610f6e29a4a08f9e3856ea580267b4526"
+        },
+        {
+          "path": "checkpoint/adapter_model.safetensors",
+          "bytes": 4769248,
+          "sha256": "3ea0deb59f9e46e729a6459d7f9b8bfefc49eb58fca4e491a67c30a729eed735"
+        },
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 28,
+          "sha256": "a40f34fa3d3fdc6878b62ab6a8b1416b01dc5fa2eedbbe70a75c519cbdf7854b"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 693225,
+          "sha256": "adb3295f9f96624980df6da162077c2a7282c62876a135a59df002902535c92d"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 378,
+          "sha256": "c457e9930ee46e2615a775a0024bd30e19f1e33462ae83c776bf7cf05ed79e55"
+        }
+      ]
+    },
+    {
+      "order": 26,
+      "run_id": "phase5__026__s20261115__sec_lora__original__unweighted",
+      "condition_id": "C02_SEC_LORA_ORIGINAL_UNWEIGHTED",
+      "seed": 20261115,
+      "method": "sec_lora",
+      "text_condition": "original",
+      "loss": "unweighted",
+      "config_canonical_sha256": "f5faa7ebfb3f786ec09ac32df203c508c01455e555920a231d8de5acf4b13600",
+      "run_relative_path": "outputs/seed_20261115/phase5__026__s20261115__sec_lora__original__unweighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/README.md",
+          "bytes": 5166,
+          "sha256": "abacbe04762406ac585646bbd06079fcb4c5b441887d09e4fb015bd096fae93d"
+        },
+        {
+          "path": "checkpoint/adapter_config.json",
+          "bytes": 1061,
+          "sha256": "2867643f749f2c535a11621b6381506610f6e29a4a08f9e3856ea580267b4526"
+        },
+        {
+          "path": "checkpoint/adapter_model.safetensors",
+          "bytes": 4769248,
+          "sha256": "019a182da168e9958fdf139f8712d03b6f0c3533deb008e10738b5fa2222aa74"
+        },
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 28,
+          "sha256": "a40f34fa3d3fdc6878b62ab6a8b1416b01dc5fa2eedbbe70a75c519cbdf7854b"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 693225,
+          "sha256": "adb3295f9f96624980df6da162077c2a7282c62876a135a59df002902535c92d"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 378,
+          "sha256": "c457e9930ee46e2615a775a0024bd30e19f1e33462ae83c776bf7cf05ed79e55"
+        }
+      ]
+    },
+    {
+      "order": 27,
+      "run_id": "phase5__027__s20261115__sec_full__original__unweighted",
+      "condition_id": "C05_SEC_FULL_ORIGINAL_UNWEIGHTED",
+      "seed": 20261115,
+      "method": "sec_full",
+      "text_condition": "original",
+      "loss": "unweighted",
+      "config_canonical_sha256": "8ed33e89d254cbae128063781808e1bbc9635a8d3d625ee38ea179d8aa6ec017",
+      "run_relative_path": "outputs/seed_20261115/phase5__027__s20261115__sec_full__original__unweighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 26,
+          "sha256": "d4c3a0114798d8c46dbb7f3dd329ac6bc70de88bf47330f4c1b60183c972bdaf"
+        },
+        {
+          "path": "checkpoint/config.json",
+          "bytes": 1870,
+          "sha256": "b24eddc0597d08dcc04b6bbc3341320915ff07faac51eca3b99b52f7b7c61623"
+        },
+        {
+          "path": "checkpoint/model.safetensors",
+          "bytes": 436385816,
+          "sha256": "ac59300fe85a25f1424314da1dafc9cde5dcd1df58fb800914f021d0733282d7"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 693225,
+          "sha256": "adb3295f9f96624980df6da162077c2a7282c62876a135a59df002902535c92d"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 378,
+          "sha256": "c457e9930ee46e2615a775a0024bd30e19f1e33462ae83c776bf7cf05ed79e55"
+        }
+      ]
+    },
+    {
+      "order": 28,
+      "run_id": "phase5__028__s20261115__sec_lora__original__weighted",
+      "condition_id": "C01_SEC_LORA_ORIGINAL_WEIGHTED",
+      "seed": 20261115,
+      "method": "sec_lora",
+      "text_condition": "original",
+      "loss": "weighted",
+      "config_canonical_sha256": "203e065eb23d92e3caa280712bc9a29f08595e2db0ccc82381d88377d863b142",
+      "run_relative_path": "outputs/seed_20261115/phase5__028__s20261115__sec_lora__original__weighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/README.md",
+          "bytes": 5166,
+          "sha256": "abacbe04762406ac585646bbd06079fcb4c5b441887d09e4fb015bd096fae93d"
+        },
+        {
+          "path": "checkpoint/adapter_config.json",
+          "bytes": 1061,
+          "sha256": "2867643f749f2c535a11621b6381506610f6e29a4a08f9e3856ea580267b4526"
+        },
+        {
+          "path": "checkpoint/adapter_model.safetensors",
+          "bytes": 4769248,
+          "sha256": "95e2095347bad92b3ff7cf8b058554212c5f953574c3cc310187d68dda61e401"
+        },
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 28,
+          "sha256": "a40f34fa3d3fdc6878b62ab6a8b1416b01dc5fa2eedbbe70a75c519cbdf7854b"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 693225,
+          "sha256": "adb3295f9f96624980df6da162077c2a7282c62876a135a59df002902535c92d"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 378,
+          "sha256": "c457e9930ee46e2615a775a0024bd30e19f1e33462ae83c776bf7cf05ed79e55"
+        }
+      ]
+    },
+    {
+      "order": 29,
+      "run_id": "phase5__029__s20261115__bert_full__masked__weighted",
+      "condition_id": "C08_BERT_FULL_MASKED_WEIGHTED",
+      "seed": 20261115,
+      "method": "bert_full",
+      "text_condition": "masked",
+      "loss": "weighted",
+      "config_canonical_sha256": "7364261619abbbd72631bfa4b0af608e66ca8905aee346966612abca354cf69d",
+      "run_relative_path": "outputs/seed_20261115/phase5__029__s20261115__bert_full__masked__weighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 26,
+          "sha256": "d4c3a0114798d8c46dbb7f3dd329ac6bc70de88bf47330f4c1b60183c972bdaf"
+        },
+        {
+          "path": "checkpoint/config.json",
+          "bytes": 1870,
+          "sha256": "661947ea9ff89c98c740345299ec15967b26bd3c6a4f8962bb506f7bf9b6079a"
+        },
+        {
+          "path": "checkpoint/model.safetensors",
+          "bytes": 437989384,
+          "sha256": "f5603ead06541b1027491b9bc002acb9be090c5c04e34cb966afbd2a29c6ee02"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 711649,
+          "sha256": "851ca67100d372ca3ae031a6abd168f53489eebfd7d89523f35c5c9b4d372c3c"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 350,
+          "sha256": "8b54ad532ba293be69643d90fbdaa7f440e593d7f1798f83d750adaa9a1cd934"
+        }
+      ]
+    },
+    {
+      "order": 30,
+      "run_id": "phase5__030__s20261116__bert_full__masked__weighted",
+      "condition_id": "C08_BERT_FULL_MASKED_WEIGHTED",
+      "seed": 20261116,
+      "method": "bert_full",
+      "text_condition": "masked",
+      "loss": "weighted",
+      "config_canonical_sha256": "d4c87e5523ff0853c7f7c76d14688349c2548d9651de34874f134496caa9fa00",
+      "run_relative_path": "outputs/seed_20261116/phase5__030__s20261116__bert_full__masked__weighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 26,
+          "sha256": "d4c3a0114798d8c46dbb7f3dd329ac6bc70de88bf47330f4c1b60183c972bdaf"
+        },
+        {
+          "path": "checkpoint/config.json",
+          "bytes": 1870,
+          "sha256": "661947ea9ff89c98c740345299ec15967b26bd3c6a4f8962bb506f7bf9b6079a"
+        },
+        {
+          "path": "checkpoint/model.safetensors",
+          "bytes": 437989384,
+          "sha256": "2ccfa7500d0bac447489f1e99a059a89bfc5d76e6efffe91b3a3328fcb32bafb"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 711649,
+          "sha256": "851ca67100d372ca3ae031a6abd168f53489eebfd7d89523f35c5c9b4d372c3c"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 350,
+          "sha256": "8b54ad532ba293be69643d90fbdaa7f440e593d7f1798f83d750adaa9a1cd934"
+        }
+      ]
+    },
+    {
+      "order": 31,
+      "run_id": "phase5__031__s20261116__sec_full__original__weighted",
+      "condition_id": "C04_SEC_FULL_ORIGINAL_WEIGHTED",
+      "seed": 20261116,
+      "method": "sec_full",
+      "text_condition": "original",
+      "loss": "weighted",
+      "config_canonical_sha256": "bd6523247fd53ac4bc1e930c39995f080aada858a9bf9b80c0cb10754e776c05",
+      "run_relative_path": "outputs/seed_20261116/phase5__031__s20261116__sec_full__original__weighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 26,
+          "sha256": "d4c3a0114798d8c46dbb7f3dd329ac6bc70de88bf47330f4c1b60183c972bdaf"
+        },
+        {
+          "path": "checkpoint/config.json",
+          "bytes": 1870,
+          "sha256": "b24eddc0597d08dcc04b6bbc3341320915ff07faac51eca3b99b52f7b7c61623"
+        },
+        {
+          "path": "checkpoint/model.safetensors",
+          "bytes": 436385816,
+          "sha256": "47973ee0146cf5161976ed167dceae4c50ba5b9c74512e645b38b58c2441e4d8"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 693225,
+          "sha256": "adb3295f9f96624980df6da162077c2a7282c62876a135a59df002902535c92d"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 378,
+          "sha256": "c457e9930ee46e2615a775a0024bd30e19f1e33462ae83c776bf7cf05ed79e55"
+        }
+      ]
+    },
+    {
+      "order": 32,
+      "run_id": "phase5__032__s20261116__sec_lora__original__unweighted",
+      "condition_id": "C02_SEC_LORA_ORIGINAL_UNWEIGHTED",
+      "seed": 20261116,
+      "method": "sec_lora",
+      "text_condition": "original",
+      "loss": "unweighted",
+      "config_canonical_sha256": "f7e55ceec534425ea13a07138ba8ca90bbbd6ad0ce01842039dd90a000b12b21",
+      "run_relative_path": "outputs/seed_20261116/phase5__032__s20261116__sec_lora__original__unweighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/README.md",
+          "bytes": 5166,
+          "sha256": "abacbe04762406ac585646bbd06079fcb4c5b441887d09e4fb015bd096fae93d"
+        },
+        {
+          "path": "checkpoint/adapter_config.json",
+          "bytes": 1061,
+          "sha256": "44c077148a3604384c383e01529dd806479846a90d578da86c993181683e32e7"
+        },
+        {
+          "path": "checkpoint/adapter_model.safetensors",
+          "bytes": 4769248,
+          "sha256": "8fce4de8018e88c90728b9121659dcd1ac3682e6355627a6342b5f30a3ffc93c"
+        },
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 28,
+          "sha256": "a40f34fa3d3fdc6878b62ab6a8b1416b01dc5fa2eedbbe70a75c519cbdf7854b"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 693225,
+          "sha256": "adb3295f9f96624980df6da162077c2a7282c62876a135a59df002902535c92d"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 378,
+          "sha256": "c457e9930ee46e2615a775a0024bd30e19f1e33462ae83c776bf7cf05ed79e55"
+        }
+      ]
+    },
+    {
+      "order": 33,
+      "run_id": "phase5__033__s20261116__sec_lora__masked__weighted",
+      "condition_id": "C03_SEC_LORA_MASKED_WEIGHTED",
+      "seed": 20261116,
+      "method": "sec_lora",
+      "text_condition": "masked",
+      "loss": "weighted",
+      "config_canonical_sha256": "bf8f5a6e42dbbe798a3a0bd00a131982aa57099f24baab78417c5104c0a9fb5c",
+      "run_relative_path": "outputs/seed_20261116/phase5__033__s20261116__sec_lora__masked__weighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/README.md",
+          "bytes": 5166,
+          "sha256": "abacbe04762406ac585646bbd06079fcb4c5b441887d09e4fb015bd096fae93d"
+        },
+        {
+          "path": "checkpoint/adapter_config.json",
+          "bytes": 1061,
+          "sha256": "44c077148a3604384c383e01529dd806479846a90d578da86c993181683e32e7"
+        },
+        {
+          "path": "checkpoint/adapter_model.safetensors",
+          "bytes": 4769248,
+          "sha256": "4d5f502b046c5ff8a33aad60fe31108e42c63c78301a08b0311d57d5680a194f"
+        },
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 28,
+          "sha256": "a40f34fa3d3fdc6878b62ab6a8b1416b01dc5fa2eedbbe70a75c519cbdf7854b"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 693225,
+          "sha256": "adb3295f9f96624980df6da162077c2a7282c62876a135a59df002902535c92d"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 378,
+          "sha256": "c457e9930ee46e2615a775a0024bd30e19f1e33462ae83c776bf7cf05ed79e55"
+        }
+      ]
+    },
+    {
+      "order": 34,
+      "run_id": "phase5__034__s20261116__bert_full__original__weighted",
+      "condition_id": "C07_BERT_FULL_ORIGINAL_WEIGHTED",
+      "seed": 20261116,
+      "method": "bert_full",
+      "text_condition": "original",
+      "loss": "weighted",
+      "config_canonical_sha256": "12eb76780e7589b35abd8bc9b034617b22dbc509f57ee78dd7a24b3ee61fbf36",
+      "run_relative_path": "outputs/seed_20261116/phase5__034__s20261116__bert_full__original__weighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 26,
+          "sha256": "d4c3a0114798d8c46dbb7f3dd329ac6bc70de88bf47330f4c1b60183c972bdaf"
+        },
+        {
+          "path": "checkpoint/config.json",
+          "bytes": 1870,
+          "sha256": "661947ea9ff89c98c740345299ec15967b26bd3c6a4f8962bb506f7bf9b6079a"
+        },
+        {
+          "path": "checkpoint/model.safetensors",
+          "bytes": 437989384,
+          "sha256": "21ef3de441396c1706e9ee08a5bc4bcfa6a26e1b8dab6974da9e5c5ca62dd4d6"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 711649,
+          "sha256": "851ca67100d372ca3ae031a6abd168f53489eebfd7d89523f35c5c9b4d372c3c"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 350,
+          "sha256": "8b54ad532ba293be69643d90fbdaa7f440e593d7f1798f83d750adaa9a1cd934"
+        }
+      ]
+    },
+    {
+      "order": 35,
+      "run_id": "phase5__035__s20261116__sec_full__original__unweighted",
+      "condition_id": "C05_SEC_FULL_ORIGINAL_UNWEIGHTED",
+      "seed": 20261116,
+      "method": "sec_full",
+      "text_condition": "original",
+      "loss": "unweighted",
+      "config_canonical_sha256": "26b63fc73801bcf11d44f78f3ab3a2eab4a44727ef35e53a674691793b7d929d",
+      "run_relative_path": "outputs/seed_20261116/phase5__035__s20261116__sec_full__original__unweighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 26,
+          "sha256": "d4c3a0114798d8c46dbb7f3dd329ac6bc70de88bf47330f4c1b60183c972bdaf"
+        },
+        {
+          "path": "checkpoint/config.json",
+          "bytes": 1870,
+          "sha256": "b24eddc0597d08dcc04b6bbc3341320915ff07faac51eca3b99b52f7b7c61623"
+        },
+        {
+          "path": "checkpoint/model.safetensors",
+          "bytes": 436385816,
+          "sha256": "1b88f8ecb2f7d9293ca147ed338b23b8a0dcb2d52c231d49ed24d3aa47f34bae"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 693225,
+          "sha256": "adb3295f9f96624980df6da162077c2a7282c62876a135a59df002902535c92d"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 378,
+          "sha256": "c457e9930ee46e2615a775a0024bd30e19f1e33462ae83c776bf7cf05ed79e55"
+        }
+      ]
+    },
+    {
+      "order": 36,
+      "run_id": "phase5__036__s20261116__sec_full__masked__weighted",
+      "condition_id": "C06_SEC_FULL_MASKED_WEIGHTED",
+      "seed": 20261116,
+      "method": "sec_full",
+      "text_condition": "masked",
+      "loss": "weighted",
+      "config_canonical_sha256": "2a04a97d11f8d03226ebc792bee63076a333b19c332f4c8bddf627d79ebcc20e",
+      "run_relative_path": "outputs/seed_20261116/phase5__036__s20261116__sec_full__masked__weighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 26,
+          "sha256": "d4c3a0114798d8c46dbb7f3dd329ac6bc70de88bf47330f4c1b60183c972bdaf"
+        },
+        {
+          "path": "checkpoint/config.json",
+          "bytes": 1870,
+          "sha256": "b24eddc0597d08dcc04b6bbc3341320915ff07faac51eca3b99b52f7b7c61623"
+        },
+        {
+          "path": "checkpoint/model.safetensors",
+          "bytes": 436385816,
+          "sha256": "596346ff18b193bff3693c52b6100eb0aca62b037ca152599aecef90de1bd20e"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 693225,
+          "sha256": "adb3295f9f96624980df6da162077c2a7282c62876a135a59df002902535c92d"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 378,
+          "sha256": "c457e9930ee46e2615a775a0024bd30e19f1e33462ae83c776bf7cf05ed79e55"
+        }
+      ]
+    },
+    {
+      "order": 37,
+      "run_id": "phase5__037__s20261116__sec_lora__original__weighted",
+      "condition_id": "C01_SEC_LORA_ORIGINAL_WEIGHTED",
+      "seed": 20261116,
+      "method": "sec_lora",
+      "text_condition": "original",
+      "loss": "weighted",
+      "config_canonical_sha256": "1aba8d2e30eb385918f084cd2a51eeefeb30c4aeb12f27f4efc7f9bd048477c0",
+      "run_relative_path": "outputs/seed_20261116/phase5__037__s20261116__sec_lora__original__weighted",
+      "checkpoint_files": [
+        {
+          "path": "checkpoint/README.md",
+          "bytes": 5166,
+          "sha256": "abacbe04762406ac585646bbd06079fcb4c5b441887d09e4fb015bd096fae93d"
+        },
+        {
+          "path": "checkpoint/adapter_config.json",
+          "bytes": 1061,
+          "sha256": "44c077148a3604384c383e01529dd806479846a90d578da86c993181683e32e7"
+        },
+        {
+          "path": "checkpoint/adapter_model.safetensors",
+          "bytes": 4769248,
+          "sha256": "0f22c1676b4ecd461c0580bddcb6e1f0f5f4d81b9466cf246a59de6617b5936f"
+        },
+        {
+          "path": "checkpoint/checkpoint_type.json",
+          "bytes": 28,
+          "sha256": "a40f34fa3d3fdc6878b62ab6a8b1416b01dc5fa2eedbbe70a75c519cbdf7854b"
+        },
+        {
+          "path": "checkpoint/tokenizer.json",
+          "bytes": 693225,
+          "sha256": "adb3295f9f96624980df6da162077c2a7282c62876a135a59df002902535c92d"
+        },
+        {
+          "path": "checkpoint/tokenizer_config.json",
+          "bytes": 378,
+          "sha256": "c457e9930ee46e2615a775a0024bd30e19f1e33462ae83c776bf7cf05ed79e55"
+        }
+      ]
+    }
+  ]
+}
+
