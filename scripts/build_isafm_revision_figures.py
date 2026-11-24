@@ -15,6 +15,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "submission" / "isafm_major_revision_2026-11-21" / "03_figure_files"
 DATASET = ROOT / "data" / "processed" / "model_dataset_v2.csv"
+CLASS_DISTRIBUTION = None
 FREEZE = ROOT / "configs" / "adaptation_evaluation_phase1.freeze.json"
 CONTRAST_890 = (
     ROOT
@@ -94,13 +95,18 @@ def style_axis(ax: plt.Axes) -> None:
 
 
 def build_class_distribution() -> None:
-    data = pd.read_csv(DATASET, usecols=["split", "target_level1"])
-    counts = (
-        data.loc[data["split"].eq("train"), "target_level1"]
-        .value_counts()
-        .rename_axis("class_name")
-        .reset_index(name="train_n")
-    )
+    if CLASS_DISTRIBUTION is not None:
+        counts = pd.read_csv(CLASS_DISTRIBUTION).rename(
+            columns={"target_level1": "class_name", "count": "train_n"}
+        )
+    else:
+        data = pd.read_csv(DATASET, usecols=["split", "target_level1"])
+        counts = (
+            data.loc[data["split"].eq("train"), "target_level1"]
+            .value_counts()
+            .rename_axis("class_name")
+            .reset_index(name="train_n")
+        )
     freeze = json.loads(FREEZE.read_text(encoding="utf-8"))
     tier_lookup = {
         class_name: tier.title()

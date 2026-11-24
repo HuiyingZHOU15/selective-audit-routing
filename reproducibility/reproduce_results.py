@@ -36,9 +36,11 @@ def sha256(path: Path) -> str:
 
 
 def required_inputs(root: Path) -> list[Path]:
+    dataset = root / "data/processed/model_dataset_v2.csv"
+    class_summary = root / "reproducibility/frozen_inputs/train_class_distribution.csv"
     return [
         root / "PAPER.html",
-        root / "data/processed/model_dataset_v2.csv",
+        dataset if dataset.is_file() else class_summary,
         root / "configs/adaptation_evaluation_phase1.freeze.json",
         root / "configs/adaptation_phase5_official_matrix_v1_1.csv",
         root / "configs/phase6_retrospective_evaluation_v1_1.freeze.json",
@@ -58,12 +60,6 @@ def required_inputs(root: Path) -> list[Path]:
         / "results/phase6b_retrospective_test_final_v1_1/phase6_test_frequency_tier_seed_results_v1_1.csv",
         root / "scripts/build_isafm_revision_figures.py",
         root / "scripts/build_isafm_submission_latex.py",
-        root
-        / "submission/isafm_major_revision_2026-11-21/03_figure_files/graphical_abstract_800dpi.tiff",
-        root
-        / "submission/isafm_major_revision_2026-11-21/03_figure_files/accuracy_efficiency_tradeoff_800dpi.tiff",
-        root
-        / "submission/isafm_major_revision_2026-11-21/03_figure_files/exploratory_lexical_masking_800dpi.tiff",
     ]
 
 
@@ -74,13 +70,19 @@ def validate_inputs(root: Path, paths: list[Path]) -> dict[str, str]:
 
     import pandas as pd
 
-    dataset = pd.read_csv(root / "data/processed/model_dataset_v2.csv", usecols=["split"])
-    observed = {str(key): int(value) for key, value in dataset["split"].value_counts().items()}
-    if len(dataset) != 6607 or observed != EXPECTED_SPLITS:
-        raise RuntimeError(
-            f"Frozen dataset mismatch: rows={len(dataset)}, splits={observed}; "
-            f"expected rows=6607, splits={EXPECTED_SPLITS}."
-        )
+    dataset_path = root / "data/processed/model_dataset_v2.csv"
+    if dataset_path.is_file():
+        dataset = pd.read_csv(dataset_path, usecols=["split"])
+        observed = {str(key): int(value) for key, value in dataset["split"].value_counts().items()}
+        if len(dataset) != 6607 or observed != EXPECTED_SPLITS:
+            raise RuntimeError(
+                f"Frozen dataset mismatch: rows={len(dataset)}, splits={observed}; "
+                f"expected rows=6607, splits={EXPECTED_SPLITS}."
+            )
+    else:
+        summary = pd.read_csv(root / "reproducibility/frozen_inputs/train_class_distribution.csv")
+        if len(summary) != 12 or int(summary["count"].sum()) != EXPECTED_SPLITS["train"]:
+            raise RuntimeError("Public training-class summary does not match the frozen design.")
 
     contrasts = pd.read_csv(
         root
@@ -102,23 +104,34 @@ def load_figure_module(root: Path):
     return module
 
 
-def copy_static_figures(root: Path, figure_output: Path) -> None:
+def copy_static_figures(root: Path, figure_output: Path) -> bool:
     source = root / "submission/isafm_major_revision_2026-11-21/03_figure_files"
     figure_output.mkdir(parents=True, exist_ok=True)
+    complete = True
     for stem in (
         "graphical_abstract",
         "accuracy_efficiency_tradeoff",
         "exploratory_lexical_masking",
     ):
         for suffix in ("_800dpi.tiff", ".svg"):
-            shutil.copy2(source / f"{stem}{suffix}", figure_output / f"{stem}{suffix}")
+            candidate = source / f"{stem}{suffix}"
+            if candidate.is_file():
+                shutil.copy2(candidate, figure_output / candidate.name)
+            else:
+                complete = False
+    return complete
 
 
-def generate_figures(root: Path, figure_output: Path) -> None:
-    copy_static_figures(root, figure_output)
+def generate_figures(root: Path, figure_output: Path) -> bool:
+    static_complete = copy_static_figures(root, figure_output)
     module = load_figure_module(root)
     module.OUT = figure_output
+    if not (root / "data/processed/model_dataset_v2.csv").is_file():
+        module.CLASS_DISTRIBUTION = (
+            root / "reproducibility/frozen_inputs/train_class_distribution.csv"
+        )
     module.main()
+    return static_complete
 
 
 def stage_manuscript(root: Path, output_root: Path, figure_output: Path) -> Path:
@@ -183,10 +196,19 @@ def main() -> int:
 
     figure_output = output_root / "figures"
     latex_output = output_root / "latex"
-    generate_figures(root, figure_output)
-    stage = stage_manuscript(root, output_root, figure_output)
-    build_latex(root, stage, latex_output)
-    pdf_compiled = False if args.skip_pdf else compile_pdf(latex_output)
+    static_complete = generate_figures(root, figure_output)
+    manuscript_generated = False
+    pdf_compiled = False
+    if static_complete:
+        stage = stage_manuscript(root, output_root, figure_output)
+        build_latex(root, stage, latex_output)
+        manuscript_generated = True
+        pdf_compiled = False if args.skip_pdf else compile_pdf(latex_output)
+    else:
+        print(
+            "Static submission-only figures are absent; reproduced the three data-derived "
+            "figures and skipped manuscript/PDF generation."
+        )
 
     manifest = {
         "schema_version": "1.0",
@@ -196,6 +218,7 @@ def main() -> int:
         "project_root": str(root),
         "dataset_rows": 6607,
         "expected_splits": EXPECTED_SPLITS,
+        "manuscript_generated": manuscript_generated,
         "pdf_compiled": pdf_compiled,
         "inputs_sha256": input_hashes,
         "outputs_sha256": output_hashes(output_root),

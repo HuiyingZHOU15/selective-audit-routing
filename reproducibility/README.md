@@ -7,7 +7,8 @@ This directory exposes the existing Phase 1--6 implementation through two reprod
 This track validates the frozen inputs, rebuilds the three data-derived figures, regenerates the anonymous LaTeX manuscript, and compiles the PDF when `pdflatex` is available.
 
 ```powershell
-cd C:\agent\selective-audit-routing
+git clone https://github.com/HuiyingZHOU15/selective-audit-routing.git
+cd selective-audit-routing
 py -m venv .venv-reproduce
 .\.venv-reproduce\Scripts\python.exe -m pip install -r reproducibility\requirements-results.txt
 .\.venv-reproduce\Scripts\python.exe reproducibility\reproduce_results.py
@@ -22,10 +23,10 @@ PowerShell shortcut:
 Outputs are written to `reproducibility/output/`:
 
 - `figures/`: editable SVG and opaque 800-dpi TIFF figures;
-- `latex/`: generated LaTeX source, review JPEGs, and PDF when TeX is installed;
+- `latex/`: generated LaTeX source, review JPEGs, and PDF when TeX and the complete submission-only figure assets are available;
 - `reproduction_manifest.json`: SHA-256 hashes for every required input and generated artifact.
 
-Use `--verify-only` to check inputs and hashes without generating files. Use `--skip-pdf` when TeX is unavailable.
+Use `--verify-only` to check inputs and hashes without generating files. Use `--skip-pdf` when TeX is unavailable. The public repository includes a non-text 12-class count table, allowing the three principal statistical figures to be rebuilt without redistributing finding narratives. If the complete local submission-only figure assets are absent, the script reports this and skips only manuscript/PDF assembly.
 
 ## Track B: rerun the official training matrix
 
