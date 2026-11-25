@@ -1,11 +1,29 @@
 # Selective Audit Routing
 
-Reproducibility package for **Calibrated Selective Classification of PCAOB
-Inspection Findings with a Domain-Adapted Transformer**.
+Reproducibility package for **Leakage-Controlled Selective Classification of
+PCAOB Inspection Findings**.
 
 Public repository:
 <https://github.com/HuiyingZHOU15/selective-audit-routing>. Cite a versioned
 release rather than the moving `main` branch once the release is archived.
+
+## Current Phase 1--6 adaptation study
+
+The current manuscript evaluates SEC-BERT full fine-tuning, SEC-BERT LoRA,
+and general-domain BERT full fine-tuning for an imbalanced 12-class PCAOB
+finding task. Reproduction instructions, frozen inputs, official training and
+evaluation entry points, and the distinction between the 890-finding
+retrospective evaluation and 863-finding post-hoc sensitivity analysis are in
+[`reproducibility/README.md`](reproducibility/README.md).
+
+The selective-routing material below is retained as historical project context;
+it is not the current paper's principal experimental design or headline result.
+
+> **Rerun status (3 November 2026).** The canonical data-construction script now
+> keeps model input target-blind by using the original finding text and records
+> unresolved references only as diagnostics. The headline metrics and figures
+> below were produced before this correction and must not be treated as final
+> until the SEC-BERT, masking, calibration, and routing stages are rerun.
 
 ## Paper in one flow
 
@@ -21,13 +39,17 @@ flowchart LR
     G -->|low margin| I[Human verification queue]
 ```
 
-The paper asks whether SEC-BERT improves retrospective classification, whether
-that improvement survives removal of explicit audit-area cues, and whether a
-calibrated abstention policy can increase agreement within the automatically
-accepted subset. It does not claim autonomous audit reasoning, completed human-
-machine workflow accuracy, or prospective temporal validity.
+The paper presents a retrospective, leakage-controlled evaluation of selective
+automation for organizing PCAOB inspection findings and routing uncertain cases
+for human verification. It compares representations, stress-tests lexical-cue
+dependence, and evaluates calibration-set thresholds on a retrospective test
+with frozen operating policies. It does not claim autonomous audit reasoning, completed human--machine
+workflow accuracy, prospective temporal validity, or proven workload reduction.
 
-## Headline frozen results
+## Archived pre-correction results
+
+The values below are retained for provenance and are not submit-ready results.
+They must be replaced by the complete target-blind rerun described below.
 
 - SEC-BERT retrospective test: accuracy 0.9337; macro-F1 0.9021.
 - Masking explicit audit-area cues without retraining: macro-F1 0.2787.
@@ -45,9 +67,8 @@ machine workflow accuracy, or prospective temporal validity.
 - `results/reports/`: experiment reports and canonical-result ledgers.
 - `tests/`: deterministic data-construction checks.
 
-Exploratory RAG and external-LLM scripts remain for provenance, but they are not
-part of the manuscript's evidential main line and are not required for any paper
-claim.
+Legacy exploratory branches are retained for provenance but are excluded from
+the manuscript evidence map and from the anonymous reproducibility archive.
 
 ## Reproduction level 1: reported results without retraining
 
@@ -55,16 +76,19 @@ Use this path to audit the manuscript from released predictions, logits and
 frozen operating points. It does not require a GPU.
 
 1. Create a Python 3.13 environment and install the versions recorded in
-   `results/masking_v2/metrics/environment.json`.
-2. Verify the tables and metric JSON files against
+   `results/canonical_v3/source_outputs/canonical_environment.json`.
+2. Verify `results/canonical_v3/SHA256SUMS.json`, then compare the tables and
+   metric JSON files against
    `manuscript/evidence_ledger_v1.csv` and
    `results/reports/sec_bert_canonical_v3_zh.md`.
-3. Regenerate the canonical analysis export:
+3. The released prediction-level and calibration outputs are already under
+   `results/canonical_v3/`; no private run path is required to audit the paper.
+   To rebuild that release from the archived training runs, use:
 
 ```powershell
 python src/export_canonical_v3_manuscript_artifacts.py `
-  --canonical-run PATH_TO_CANONICAL_RUN `
-  --masking-run PATH_TO_MASKING_RUN `
+  --canonical-run PATH_TO_ARCHIVED_CANONICAL_RUN `
+  --masking-run PATH_TO_ARCHIVED_MASKING_RUN `
   --output-root results/canonical_v3
 ```
 
@@ -76,29 +100,23 @@ python src/plot_probability_calibration_v1.py
 python src/plot_selective_performance_v2.py
 python src/plot_dataset_construction_distribution_v1.py
 python src/plot_risk_score_comparison_v1.py
-python src/plot_class_referral_allocation_v1.py `
-  --scored results/canonical_v3/tables/sec_bert_canonical_v3_test_scored.csv `
-  --metrics PATH_TO_CANONICAL_RUN/downstream/metrics.json `
-  --version v3
-python src/plot_class_context_error_analysis_v1.py `
-  --context results/canonical_v3/tables/sec_bert_context_quality_test_v3.csv `
-  --confusion results/canonical_v3/tables/sec_bert_confusion_pairs_test_v3.csv `
-  --version v3
-python src/plot_sec_bert_class_performance_v1.py `
-  --scored results/canonical_v3/tables/sec_bert_canonical_v3_test_scored.csv `
-  --version v3
+python src/plot_class_referral_allocation_v1.py
+python src/plot_class_context_error_analysis_v1.py
+python src/plot_sec_bert_class_performance_v1.py
 python src/plot_ambiguity_signal_diagnostics_v1.py
 ```
 
 A reproduction should stop and report an error if the headline values or
-artifact hashes differ.
+artifact hashes differ. The legacy `results/metrics/*_v1.json` and
+`results/masking_v2/` files document earlier iterations and are not manuscript
+evidence; all current manuscript claims use `results/canonical_v3/`.
 
 ## Reproduction level 2: rebuild and retrain
 
 ### 1. Reacquire and verify the public source
 
 Download the PCAOB Part I.A inspection-findings file from the PCAOB website and
-place it at the path documented by the source manifest. The frozen snapshot has
+place it at `data/raw/pcaob_part_i_a_2026-09-27.csv`. The frozen snapshot has
 SHA-256:
 
 ```text
@@ -109,16 +127,16 @@ The source is Windows-1252 encoded. The scripts write normalized UTF-8
 derivatives and never modify the raw snapshot.
 
 ```powershell
-python src/audit_data.py
-python src/build_dataset_v1.py
-python -m pytest tests/test_dataset_v1.py -q
+python src/rebuild_paper_dataset.py `
+  --source data/raw/pcaob_part_i_a_2026-09-27.csv
+python -m pytest tests -q --import-mode=importlib -p no:cacheprovider
 ```
 
 ### 2. Run the CPU baselines
 
 ```powershell
 python src/train_baseline.py
-python src/train_encoder_baseline_v1.py --model-key general_xsmall --device auto
+python src/train_v2_models.py
 ```
 
 ### 3. Train and export SEC-BERT
@@ -149,9 +167,9 @@ python src/calibrate_and_evaluate_sec_bert_v2.py `
   --seed 20261022
 ```
 
-The canonical temperature is 1.1517754200. The high-coverage and conservative
-top-two-margin thresholds are 0.5269052934 and 0.8157442331. Do not retune them
-on the retrospective test or a later temporal snapshot.
+The archived temperature and thresholds belong to the pre-correction run and
+must be re-estimated on the target-blind calibration outputs. Do not retune the
+replacement values on the retrospective test or a later temporal snapshot.
 
 ## Human verification protocol
 
@@ -179,3 +197,4 @@ Remove secrets and private paths, confirm PCAOB redistribution terms, decide
 whether model weights may be redistributed, add a software license, publish a
 versioned GitHub release, and archive it to obtain a DOI. Update the manuscript
 URL and DOI together.
+
